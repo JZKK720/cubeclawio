@@ -7,6 +7,7 @@ export const API = {
   projects: `${API_PREFIX}/projects`,
   issues: `${API_PREFIX}/issues`,
   goals: `${API_PREFIX}/goals`,
+  execution: `${API_PREFIX}/execution`,
   approvals: `${API_PREFIX}/approvals`,
   secrets: `${API_PREFIX}/secrets`,
   costs: `${API_PREFIX}/costs`,

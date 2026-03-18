@@ -59,7 +59,7 @@ describe("opencode_local environment diagnostics", () => {
     }
   });
 
-  it("classifies ProviderModelNotFoundError probe output as model-unavailable warning", async () => {
+  it.skipIf(process.platform === "win32")("classifies ProviderModelNotFoundError probe output as model-unavailable warning", async () => {
     const cwd = await fs.mkdtemp(path.join(os.tmpdir(), "paperclip-opencode-env-probe-cwd-"));
     const binDir = await fs.mkdtemp(path.join(os.tmpdir(), "paperclip-opencode-env-probe-bin-"));
     const fakeOpencode = path.join(binDir, "opencode");

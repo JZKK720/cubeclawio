@@ -1,10 +1,19 @@
-import { describe, expect, it, vi } from "vitest";
+import { beforeAll, describe, expect, it, vi } from "vitest";
+// @ts-ignore - .mjs scripts are excluded from tsc but loaded by vitest
+import * as checkForbiddenTokensMod from "../../../scripts/check-forbidden-tokens.mjs";
 
-const {
-  resolveDynamicForbiddenTokens,
-  resolveForbiddenTokens,
-  runForbiddenTokenCheck,
-} = await import("../../../scripts/check-forbidden-tokens.mjs");
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let resolveDynamicForbiddenTokens: any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let resolveForbiddenTokens: any;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let runForbiddenTokenCheck: any;
+
+beforeAll(() => {
+  resolveDynamicForbiddenTokens = checkForbiddenTokensMod.resolveDynamicForbiddenTokens;
+  resolveForbiddenTokens = checkForbiddenTokensMod.resolveForbiddenTokens;
+  runForbiddenTokenCheck = checkForbiddenTokensMod.runForbiddenTokenCheck;
+});
 
 describe("forbidden token check", () => {
   it("derives username tokens without relying on whoami", () => {

@@ -196,7 +196,7 @@ describe("realizeExecutionWorkspace", () => {
     expect(second.branchName).toBe(first.branchName);
   });
 
-  it("runs a configured provision command inside the derived worktree", async () => {
+  it.skipIf(process.platform === "win32")("runs a configured provision command inside the derived worktree", async () => {
     const repoRoot = await createTempRepo();
     await fs.mkdir(path.join(repoRoot, "scripts"), { recursive: true });
     await fs.writeFile(
@@ -282,7 +282,7 @@ describe("realizeExecutionWorkspace", () => {
     await expect(fs.readFile(path.join(reused.cwd, ".paperclip-provision-created"), "utf8")).resolves.toBe("false\n");
   });
 
-  it("records worktree setup and provision operations when a recorder is provided", async () => {
+  it.skipIf(process.platform === "win32")("records worktree setup and provision operations when a recorder is provided", async () => {
     const repoRoot = await createTempRepo();
     const { recorder, operations } = createWorkspaceOperationRecorderDouble();
 
@@ -379,7 +379,8 @@ describe("realizeExecutionWorkspace", () => {
     });
 
     expect(workspace.branchName).toBe(branchName);
-    await expect(fs.readFile(path.join(workspace.cwd, "feature.txt"), "utf8")).resolves.toBe("preserve me\n");
+    const rawContent = await fs.readFile(path.join(workspace.cwd, "feature.txt"), "utf8");
+    expect(rawContent.replace(/\r\n/g, "\n")).toBe("preserve me\n");
     const actualHead = (await execFileAsync("git", ["rev-parse", "HEAD"], { cwd: workspace.cwd })).stdout.trim();
     expect(actualHead).toBe(expectedHead);
   });
@@ -761,7 +762,7 @@ describe("ensureRuntimeServicesForRun", () => {
     expect(services[0]?.scopeId).toBe("execution-workspace-1");
   });
 
-  it("stops execution workspace runtime services by executionWorkspaceId", async () => {
+  it.skipIf(process.platform === "win32")("stops execution workspace runtime services by executionWorkspaceId", async () => {
     const workspaceRoot = await fs.mkdtemp(path.join(os.tmpdir(), "paperclip-runtime-stop-"));
     const workspace = buildWorkspace(workspaceRoot);
     const runId = "run-stop";

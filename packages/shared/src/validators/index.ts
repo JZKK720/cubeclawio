@@ -145,6 +145,17 @@ export {
 } from "./secret.js";
 
 export {
+  executionConnectorConfigSchema,
+  testExecutionConnectorSchema,
+  listExecutionRunEventsQuerySchema,
+  ironclawGatewayPersistentConfigSchema,
+  type ExecutionConnectorConfigInput,
+  type TestExecutionConnector,
+  type ListExecutionRunEventsQuery,
+  type IronclawGatewayPersistentConfig,
+} from "./execution.js";
+
+export {
   createCostEventSchema,
   updateBudgetSchema,
   type CreateCostEvent,

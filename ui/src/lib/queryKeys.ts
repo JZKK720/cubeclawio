@@ -41,6 +41,20 @@ export const queryKeys = {
       ["execution-workspaces", companyId, filters ?? {}] as const,
     detail: (id: string) => ["execution-workspaces", "detail", id] as const,
   },
+  execution: {
+    connectors: (companyId: string) => ["execution", "connectors", companyId] as const,
+    runs: (companyId: string, connectorKey?: string) => ["execution", "runs", companyId, connectorKey ?? "__all__"] as const,
+    runDetail: (companyId: string, connectorKey: string, runId: string) =>
+      ["execution", "run", companyId, connectorKey, runId] as const,
+    runEvents: (companyId: string, connectorKey: string, runId: string) =>
+      ["execution", "events", companyId, connectorKey, runId] as const,
+    runArtifacts: (companyId: string, connectorKey: string, runId: string) =>
+      ["execution", "artifacts", companyId, connectorKey, runId] as const,
+    routines: (companyId: string, connectorKey?: string) =>
+      ["execution", "routines", companyId, connectorKey ?? "__all__"] as const,
+    routineRuns: (companyId: string, connectorKey: string, routineId: string) =>
+      ["execution", "routine-runs", companyId, connectorKey, routineId] as const,
+  },
   projects: {
     list: (companyId: string) => ["projects", companyId] as const,
     detail: (id: string) => ["projects", "detail", id] as const,

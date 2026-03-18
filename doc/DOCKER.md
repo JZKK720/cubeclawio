@@ -39,10 +39,51 @@ Defaults:
 Optional overrides:
 
 ```sh
-PAPERCLIP_PORT=3200 PAPERCLIP_DATA_DIR=./data/pc docker compose -f docker-compose.quickstart.yml up --build
+PAPERCLIP_PORT=3221 PAPERCLIP_DATA_DIR=./data/pc docker compose -f docker-compose.quickstart.yml up --build
 ```
 
 If you change host port or use a non-local domain, set `PAPERCLIP_PUBLIC_URL` to the external URL you will use in browser/auth flows.
+
+Keep `BETTER_AUTH_SECRET` local. A generated development secret belongs in your repo-local `.env` only, not in `.env.example`, compose YAML, or any committed shared config.
+
+Example with a non-default host port to avoid local conflicts:
+
+```sh
+PAPERCLIP_PORT=3221 \
+PAPERCLIP_PUBLIC_URL=http://localhost:3221 \
+BETTER_AUTH_SECRET=replace-with-a-long-random-string \
+docker compose -f docker-compose.quickstart.yml up --build
+```
+
+## Full Compose (Server + Postgres)
+
+Use the root compose file when you want a separate PostgreSQL container instead of embedded PostgreSQL:
+
+```sh
+docker compose up --build
+```
+
+Defaults:
+
+- app host port: `3100`
+- postgres host port: `5432`
+
+Optional overrides to avoid port conflicts:
+
+```sh
+PAPERCLIP_PORT=3221 \
+PAPERCLIP_DB_PORT=5332 \
+PAPERCLIP_PUBLIC_URL=http://localhost:3221 \
+BETTER_AUTH_SECRET=replace-with-a-long-random-string \
+docker compose up --build
+```
+
+Notes:
+
+- `PAPERCLIP_PORT` changes the host port bound to the Paperclip container.
+- `PAPERCLIP_DB_PORT` changes the host port bound to the Postgres container.
+- The server still connects to Postgres on the internal compose network at `db:5432`; only the host-exposed port changes.
+- If you change `PAPERCLIP_PORT`, update `PAPERCLIP_PUBLIC_URL` to match the browser URL you will actually use.
 
 ## Authenticated Compose (Single Public URL)
 

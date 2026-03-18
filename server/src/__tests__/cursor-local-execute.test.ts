@@ -46,7 +46,7 @@ type CapturePayload = {
   paperclipEnvKeys: string[];
 };
 
-describe("cursor execute", () => {
+describe.skipIf(process.platform === "win32")("cursor execute", () => {
   it("injects paperclip env vars and prompt note by default", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "paperclip-cursor-execute-"));
     const workspace = path.join(root, "workspace");

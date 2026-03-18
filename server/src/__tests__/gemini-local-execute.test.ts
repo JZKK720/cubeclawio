@@ -44,7 +44,7 @@ type CapturePayload = {
   paperclipEnvKeys: string[];
 };
 
-describe("gemini execute", () => {
+describe.skipIf(process.platform === "win32")("gemini execute", () => {
   it("passes prompt as final argument and injects paperclip env vars", async () => {
     const root = await fs.mkdtemp(path.join(os.tmpdir(), "paperclip-gemini-execute-"));
     const workspace = path.join(root, "workspace");

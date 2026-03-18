@@ -2,7 +2,7 @@ import { and, desc, eq } from "drizzle-orm";
 import type { Db } from "@paperclipai/db";
 import { companySecrets, companySecretVersions } from "@paperclipai/db";
 import type { AgentEnvConfig, EnvBinding, SecretProvider } from "@paperclipai/shared";
-import { envBindingSchema } from "@paperclipai/shared";
+import { envBindingSchema, envBindingSecretRefSchema } from "@paperclipai/shared";
 import { conflict, notFound, unprocessable } from "../errors.js";
 import { getSecretProvider, listSecretProviders } from "../secrets/provider-registry.js";
 
@@ -331,6 +331,50 @@ export function secretService(db: Db) {
         }
       }
       return { env: resolved, secretKeys };
+    },
+
+    normalizeBindingForPersistence: async (
+      companyId: string,
+      binding: unknown,
+      opts?: { requireSecretRef?: boolean },
+    ): Promise<EnvBinding> => {
+      const parsed = opts?.requireSecretRef
+        ? envBindingSecretRefSchema.safeParse(binding)
+        : envBindingSchema.safeParse(binding);
+
+      if (!parsed.success) {
+        throw unprocessable("Invalid secret binding");
+      }
+
+      const normalized = canonicalizeBinding(parsed.data as EnvBinding);
+      if (normalized.type === "plain") {
+        if (opts?.requireSecretRef) {
+          throw unprocessable("This field must use a company secret reference");
+        }
+        if (normalized.value === REDACTED_SENTINEL) {
+          throw unprocessable("Refusing to persist redacted placeholder value");
+        }
+        return normalized;
+      }
+
+      await assertSecretInCompany(companyId, normalized.secretId);
+      return {
+        type: "secret_ref",
+        secretId: normalized.secretId,
+        version: normalized.version,
+      };
+    },
+
+    resolveBindingValue: async (companyId: string, binding: unknown): Promise<string> => {
+      const parsed = envBindingSchema.safeParse(binding);
+      if (!parsed.success) {
+        throw unprocessable("Invalid secret binding");
+      }
+      const normalized = canonicalizeBinding(parsed.data as EnvBinding);
+      if (normalized.type === "plain") {
+        return normalized.value;
+      }
+      return resolveSecretValue(companyId, normalized.secretId, normalized.version);
     },
 
     resolveAdapterConfigForRuntime: async (companyId: string, adapterConfig: Record<string, unknown>): Promise<{ config: Record<string, unknown>; secretKeys: Set<string> }> => {

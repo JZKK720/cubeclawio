@@ -233,12 +233,14 @@ async function executeProcess(input: {
   args: string[];
   cwd: string;
   env?: NodeJS.ProcessEnv;
+  shell?: boolean;
 }): Promise<{ stdout: string; stderr: string; code: number | null }> {
   const proc = await new Promise<{ stdout: string; stderr: string; code: number | null }>((resolve, reject) => {
     const child = spawn(input.command, input.args, {
       cwd: input.cwd,
       stdio: ["ignore", "pipe", "pipe"],
       env: input.env ?? process.env,
+      shell: input.shell ?? false,
     });
     let stdout = "";
     let stderr = "";
@@ -327,12 +329,12 @@ async function runWorkspaceCommand(input: {
   env: NodeJS.ProcessEnv;
   label: string;
 }) {
-  const shell = process.env.SHELL?.trim() || "/bin/sh";
   const proc = await executeProcess({
-    command: shell,
-    args: ["-c", input.command],
+    command: input.command,
+    args: [],
     cwd: input.cwd,
     env: input.env,
+    shell: true,
   });
   if (proc.code === 0) return;
 
@@ -423,12 +425,12 @@ async function recordWorkspaceCommandOperation(
     cwd: input.cwd,
     metadata: input.metadata ?? null,
     run: async () => {
-      const shell = process.env.SHELL?.trim() || "/bin/sh";
       const result = await executeProcess({
-        command: shell,
-        args: ["-c", input.command],
+        command: input.command,
+        args: [],
         cwd: input.cwd,
         env: input.env,
+        shell: true,
       });
       stdout = result.stdout;
       stderr = result.stderr;
@@ -1122,13 +1124,21 @@ async function startLocalRuntimeService(input: {
     const portEnvKey = asString(portConfig.envKey, "PORT");
     env[portEnvKey] = String(port);
   }
-  const shell = process.env.SHELL?.trim() || "/bin/sh";
-  const child = spawn(shell, ["-lc", command], {
-    cwd: serviceCwd,
-    env,
-    detached: process.platform !== "win32",
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+  const envShell = process.env.SHELL?.trim();
+  const child = envShell
+    ? spawn(envShell, ["-lc", command], {
+        cwd: serviceCwd,
+        env,
+        detached: process.platform !== "win32",
+        stdio: ["ignore", "pipe", "pipe"],
+      })
+    : spawn(command, [], {
+        cwd: serviceCwd,
+        env,
+        detached: process.platform !== "win32",
+        stdio: ["ignore", "pipe", "pipe"],
+        shell: true,
+      });
   let stderrExcerpt = "";
   let stdoutExcerpt = "";
   child.stdout?.on("data", async (chunk) => {

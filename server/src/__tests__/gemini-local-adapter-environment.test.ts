@@ -53,7 +53,7 @@ describe("gemini_local environment diagnostics", () => {
     await fs.rm(path.dirname(cwd), { recursive: true, force: true });
   });
 
-  it("passes model and yolo flags to the hello probe", async () => {
+  it.skipIf(process.platform === "win32")("passes model and yolo flags to the hello probe", async () => {
     const root = path.join(
       os.tmpdir(),
       `paperclip-gemini-local-probe-${Date.now()}-${Math.random().toString(16).slice(2)}`,

@@ -18,6 +18,8 @@ export { agentWakeupRequests } from "./agent_wakeup_requests.js";
 export { projects } from "./projects.js";
 export { projectWorkspaces } from "./project_workspaces.js";
 export { executionWorkspaces } from "./execution_workspaces.js";
+export { executionConnectorConfigs } from "./execution_connector_configs.js";
+export { executionRunEvents } from "./execution_run_events.js";
 export { workspaceOperations } from "./workspace_operations.js";
 export { workspaceRuntimeServices } from "./workspace_runtime_services.js";
 export { projectGoals } from "./project_goals.js";
