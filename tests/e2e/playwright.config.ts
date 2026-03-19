@@ -20,10 +20,10 @@ export default defineConfig({
       use: { browserName: "chromium" },
     },
   ],
-  // The webServer directive starts `paperclipai run` before tests.
-  // Expects `pnpm paperclipai` to be runnable from repo root.
+  // The webServer directive starts `cubecloud.io run` before tests.
+  // Expects `pnpm cubecloud.io` to be runnable from repo root.
   webServer: {
-    command: `pnpm paperclipai run --yes`,
+    command: `pnpm cubecloud.io run --yes`,
     url: `${BASE_URL}/api/health`,
     reuseExistingServer: !!process.env.CI,
     timeout: 120_000,
