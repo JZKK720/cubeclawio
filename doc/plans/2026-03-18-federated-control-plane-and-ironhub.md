@@ -4,7 +4,7 @@
 
 This fork is moving toward a federated control-plane model:
 
-- Paperclip-derived backend remains the company-scoped control plane
+- CubeClawIO-derived backend remains the company-scoped control plane
 - IronHub becomes the operator-facing product and frontend brand
 - external execution fabrics such as IronClaw, OpenCode/Codex, and OpenWork are treated as specialized backends rather than absorbed into core orchestration loops
 
@@ -15,7 +15,7 @@ The immediate goal is to define the first additive contract layer that supports:
 3. connector-driven dispatch to external runtimes
 4. a first real connector target: `ironclaw_gateway`
 
-This plan is intentionally additive. Existing Paperclip concepts such as `HeartbeatRun`, plugin job runs, approvals, workspace runtime services, and company scoping remain valid.
+This plan is intentionally additive. Existing CubeClawIO concepts such as `HeartbeatRun`, plugin job runs, approvals, workspace runtime services, and company scoping remain valid.
 
 ## Recommendation In One Sentence
 
@@ -25,7 +25,7 @@ Keep the current backend as the governance and routing control plane, add a norm
 
 ### 1. Soft rebrand, not hard rename
 
-The forked product is branded as IronHub, while internal package scopes and runtime internals remain Paperclip-derived for now.
+The forked product is branded as IronHub, while internal package scopes and runtime internals remain CubeClawIO-derived for now.
 
 That means:
 
@@ -33,7 +33,7 @@ That means:
 - allow new frontend branding and product copy under IronHub
 - avoid immediate churn across package scopes, plugin SDK names, CLI names, and env vars
 
-### 2. Paperclip-derived backend is the control plane, not the universal worker
+### 2. CubeClawIO-derived backend is the control plane, not the universal worker
 
 The backend should own:
 
@@ -78,7 +78,7 @@ This is a new control-plane abstraction above existing engine-native records.
 
 ### 5. The frontend should talk to the control plane, not every engine directly
 
-IronHub should primarily call Paperclip-derived backend APIs.
+IronHub should primarily call CubeClawIO-derived backend APIs.
 
 That keeps:
 
@@ -248,7 +248,7 @@ Initial page map:
 - activity
 - settings
 
-The current bundled Paperclip UI can remain as a legacy admin surface during transition.
+The current bundled CubeClawIO UI can remain as a legacy admin surface during transition.
 
 ## First Connector: `ironclaw_gateway`
 
@@ -265,11 +265,11 @@ That makes it the most suitable first external execution fabric for the federate
 
 ## Deployment Assumption
 
-Paperclip-derived backend connects server-to-server to an IronClaw gateway over HTTP using a bearer token.
+CubeClawIO-derived backend connects server-to-server to an IronClaw gateway over HTTP using a bearer token.
 
 Typical topology:
 
-- IronHub browser -> Paperclip-derived backend
+- IronHub browser -> CubeClawIO-derived backend
 - backend -> `ironclaw_gateway` connector -> IronClaw gateway
 
 ## IronClaw Gateway Route Inventory
@@ -321,7 +321,7 @@ It does not need to create new IronClaw routines in phase 1.
 
 ### Health
 
-Paperclip connector operation:
+CubeClawIO connector operation:
 
 - `testConnector(config)`
 
@@ -330,14 +330,14 @@ IronClaw calls:
 - `GET /api/health`
 - `GET /api/gateway/status`
 
-Paperclip object impact:
+CubeClawIO object impact:
 
 - populate `ExecutionConnectorHealth`
 - confirm auth, reachability, and engine metadata
 
 ### Job discovery
 
-Paperclip connector operation:
+CubeClawIO connector operation:
 
 - `listJobs(filter?)`
 
@@ -355,7 +355,7 @@ Mapping:
 
 ### Job detail
 
-Paperclip connector operation:
+CubeClawIO connector operation:
 
 - `getJob(runRef)`
 
@@ -375,7 +375,7 @@ Mapping:
 
 ### Job events
 
-Paperclip connector operation:
+CubeClawIO connector operation:
 
 - `streamJobEvents(runRef)`
 
@@ -393,7 +393,7 @@ Expected event mapping from IronClaw SSE event family:
 
 ### Job control
 
-Paperclip connector operations:
+CubeClawIO connector operations:
 
 - `cancelJob(runRef)`
 - `restartJob(runRef)`
@@ -405,7 +405,7 @@ IronClaw calls:
 - `POST /api/jobs/{id}/restart`
 - `POST /api/jobs/{id}/prompt`
 
-Paperclip object impact:
+CubeClawIO object impact:
 
 - append normalized control events
 - update status or pending input state
@@ -413,7 +413,7 @@ Paperclip object impact:
 
 ### Routine discovery
 
-Paperclip connector operation:
+CubeClawIO connector operation:
 
 - `listRoutines()`
 
@@ -430,7 +430,7 @@ Mapping:
 
 ### Routine detail and runs
 
-Paperclip connector operations:
+CubeClawIO connector operations:
 
 - `getRoutine(routineRef)`
 - `listRoutineRuns(routineRef)`
@@ -447,7 +447,7 @@ Mapping:
 
 ### Routine control
 
-Paperclip connector operations:
+CubeClawIO connector operations:
 
 - `triggerRoutine(routineRef)`
 - `setRoutineEnabled(routineRef, enabled)`
@@ -459,7 +459,7 @@ IronClaw calls:
 - `POST /api/routines/{id}/toggle`
 - `DELETE /api/routines/{id}`
 
-Paperclip object impact:
+CubeClawIO object impact:
 
 - trigger returns a new normalized child run reference when IronClaw returns a `run_id`
 - toggle mutates routine status
@@ -526,5 +526,5 @@ This mapping can be refined later without changing the IronHub frontend contract
 1. Shared contracts can represent external job, routine, and session execution without breaking existing types.
 2. `ironclaw_gateway` has a documented minimal API surface tied to real IronClaw routes.
 3. The normalized run model can express parent-child relationships, external ids, statuses, usage, and artifacts.
-4. The plan keeps company scoping, approval visibility, and budget attribution anchored in the Paperclip-derived backend.
+4. The plan keeps company scoping, approval visibility, and budget attribution anchored in the CubeClawIO-derived backend.
 5. IronHub can be developed as a new frontend without requiring an immediate hard rename of the monorepo internals.

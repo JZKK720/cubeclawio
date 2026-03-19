@@ -9,38 +9,38 @@ Client-side commands for managing issues, agents, approvals, and more.
 
 ```sh
 # List issues
-pnpm paperclipai issue list [--status todo,in_progress] [--assignee-agent-id <id>] [--match text]
+pnpm cubecloud.io issue list [--status todo,in_progress] [--assignee-agent-id <id>] [--match text]
 
 # Get issue details
-pnpm paperclipai issue get <issue-id-or-identifier>
+pnpm cubecloud.io issue get <issue-id-or-identifier>
 
 # Create issue
-pnpm paperclipai issue create --title "..." [--description "..."] [--status todo] [--priority high]
+pnpm cubecloud.io issue create --title "..." [--description "..."] [--status todo] [--priority high]
 
 # Update issue
-pnpm paperclipai issue update <issue-id> [--status in_progress] [--comment "..."]
+pnpm cubecloud.io issue update <issue-id> [--status in_progress] [--comment "..."]
 
 # Add comment
-pnpm paperclipai issue comment <issue-id> --body "..." [--reopen]
+pnpm cubecloud.io issue comment <issue-id> --body "..." [--reopen]
 
 # Checkout task
-pnpm paperclipai issue checkout <issue-id> --agent-id <agent-id>
+pnpm cubecloud.io issue checkout <issue-id> --agent-id <agent-id>
 
 # Release task
-pnpm paperclipai issue release <issue-id>
+pnpm cubecloud.io issue release <issue-id>
 ```
 
 ## Company Commands
 
 ```sh
-pnpm paperclipai company list
-pnpm paperclipai company get <company-id>
+pnpm cubecloud.io company list
+pnpm cubecloud.io company get <company-id>
 
 # Export to portable folder package (writes manifest + markdown files)
-pnpm paperclipai company export <company-id> --out ./exports/acme --include company,agents
+pnpm cubecloud.io company export <company-id> --out ./exports/acme --include company,agents
 
 # Preview import (no writes)
-pnpm paperclipai company import \
+pnpm cubecloud.io company import \
   --from https://github.com/<owner>/<repo>/tree/main/<path> \
   --target existing \
   --company-id <company-id> \
@@ -48,7 +48,7 @@ pnpm paperclipai company import \
   --dry-run
 
 # Apply import
-pnpm paperclipai company import \
+pnpm cubecloud.io company import \
   --from ./exports/acme \
   --target new \
   --new-company-name "Acme Imported" \
@@ -58,52 +58,52 @@ pnpm paperclipai company import \
 ## Agent Commands
 
 ```sh
-pnpm paperclipai agent list
-pnpm paperclipai agent get <agent-id>
+pnpm cubecloud.io agent list
+pnpm cubecloud.io agent get <agent-id>
 ```
 
 ## Approval Commands
 
 ```sh
 # List approvals
-pnpm paperclipai approval list [--status pending]
+pnpm cubecloud.io approval list [--status pending]
 
 # Get approval
-pnpm paperclipai approval get <approval-id>
+pnpm cubecloud.io approval get <approval-id>
 
 # Create approval
-pnpm paperclipai approval create --type hire_agent --payload '{"name":"..."}' [--issue-ids <id1,id2>]
+pnpm cubecloud.io approval create --type hire_agent --payload '{"name":"..."}' [--issue-ids <id1,id2>]
 
 # Approve
-pnpm paperclipai approval approve <approval-id> [--decision-note "..."]
+pnpm cubecloud.io approval approve <approval-id> [--decision-note "..."]
 
 # Reject
-pnpm paperclipai approval reject <approval-id> [--decision-note "..."]
+pnpm cubecloud.io approval reject <approval-id> [--decision-note "..."]
 
 # Request revision
-pnpm paperclipai approval request-revision <approval-id> [--decision-note "..."]
+pnpm cubecloud.io approval request-revision <approval-id> [--decision-note "..."]
 
 # Resubmit
-pnpm paperclipai approval resubmit <approval-id> [--payload '{"..."}']
+pnpm cubecloud.io approval resubmit <approval-id> [--payload '{"..."}']
 
 # Comment
-pnpm paperclipai approval comment <approval-id> --body "..."
+pnpm cubecloud.io approval comment <approval-id> --body "..."
 ```
 
 ## Activity Commands
 
 ```sh
-pnpm paperclipai activity list [--agent-id <id>] [--entity-type issue] [--entity-id <id>]
+pnpm cubecloud.io activity list [--agent-id <id>] [--entity-type issue] [--entity-id <id>]
 ```
 
 ## Dashboard
 
 ```sh
-pnpm paperclipai dashboard get
+pnpm cubecloud.io dashboard get
 ```
 
 ## Heartbeat
 
 ```sh
-pnpm paperclipai heartbeat run --agent-id <agent-id> [--api-base http://localhost:3100]
+pnpm cubecloud.io heartbeat run --agent-id <agent-id> [--api-base http://localhost:3100]
 ```

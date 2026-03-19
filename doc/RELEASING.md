@@ -32,7 +32,7 @@ Important constraints:
 Every stable release has four separate surfaces:
 
 1. **Verification** — the exact git SHA passes typecheck, tests, and build
-2. **npm** — `paperclipai` and public workspace packages are published
+2. **npm** — `cubecloud.io` and public workspace packages are published
 3. **GitHub** — the stable release gets a git tag and GitHub Release
 4. **Website / announcements** — the stable changelog is published externally and announced
 
@@ -65,7 +65,7 @@ It:
 Users install canaries with:
 
 ```bash
-npx paperclipai@canary onboard
+npx cubecloud.io@canary onboard
 ```
 
 ### Stable
@@ -162,7 +162,7 @@ HOST_PORT=3233 DATA_DIR=./data/release-smoke-stable PAPERCLIPAI_VERSION=latest .
 
 Minimum checks:
 
-- `npx paperclipai@canary onboard` installs
+- `npx cubecloud.io@canary onboard` installs
 - onboarding completes without crashes
 - the server boots
 - the UI loads
