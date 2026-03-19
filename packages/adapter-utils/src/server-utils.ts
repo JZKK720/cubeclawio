@@ -1,6 +1,7 @@
 import { spawn, type ChildProcess } from "node:child_process";
 import { constants as fsConstants, promises as fs } from "node:fs";
 import path from "node:path";
+import { resolvePaperclipEnvValue } from "./env-alias.js";
 
 export interface RunProcessResult {
   exitCode: number | null;
@@ -142,10 +143,10 @@ export function buildPaperclipEnv(agent: { id: string; companyId: string }): Rec
     PAPERCLIP_COMPANY_ID: agent.companyId,
   };
   const runtimeHost = resolveHostForUrl(
-    process.env.PAPERCLIP_LISTEN_HOST ?? process.env.HOST ?? "localhost",
+    resolvePaperclipEnvValue("PAPERCLIP_LISTEN_HOST") ?? process.env.HOST ?? "localhost",
   );
-  const runtimePort = process.env.PAPERCLIP_LISTEN_PORT ?? process.env.PORT ?? "3100";
-  const apiUrl = process.env.PAPERCLIP_API_URL ?? `http://${runtimeHost}:${runtimePort}`;
+  const runtimePort = resolvePaperclipEnvValue("PAPERCLIP_LISTEN_PORT") ?? process.env.PORT ?? "3100";
+  const apiUrl = resolvePaperclipEnvValue("PAPERCLIP_API_URL") ?? `http://${runtimeHost}:${runtimePort}`;
   vars.PAPERCLIP_API_URL = apiUrl;
   return vars;
 }

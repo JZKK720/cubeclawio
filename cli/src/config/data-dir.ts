@@ -5,6 +5,7 @@ import {
   resolveDefaultContextPath,
   resolvePaperclipInstanceId,
 } from "./home.js";
+import { resolvePaperclipEnvValue } from "./env-alias.js";
 
 export interface DataDirOptionLike {
   dataDir?: string;
@@ -29,7 +30,7 @@ export function applyDataDirOverride(
   process.env.PAPERCLIP_HOME = resolvedDataDir;
 
   if (support.hasConfigOption) {
-    const hasConfigOverride = Boolean(options.config?.trim()) || Boolean(process.env.PAPERCLIP_CONFIG?.trim());
+    const hasConfigOverride = Boolean(options.config?.trim()) || Boolean(resolvePaperclipEnvValue("PAPERCLIP_CONFIG")?.trim());
     if (!hasConfigOverride) {
       const instanceId = resolvePaperclipInstanceId(options.instance);
       process.env.PAPERCLIP_INSTANCE_ID = instanceId;
@@ -38,7 +39,7 @@ export function applyDataDirOverride(
   }
 
   if (support.hasContextOption) {
-    const hasContextOverride = Boolean(options.context?.trim()) || Boolean(process.env.PAPERCLIP_CONTEXT?.trim());
+    const hasContextOverride = Boolean(options.context?.trim()) || Boolean(resolvePaperclipEnvValue("PAPERCLIP_CONTEXT")?.trim());
     if (!hasContextOverride) {
       process.env.PAPERCLIP_CONTEXT = resolveDefaultContextPath();
     }

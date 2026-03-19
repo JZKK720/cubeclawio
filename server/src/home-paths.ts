@@ -1,5 +1,6 @@
 import os from "node:os";
 import path from "node:path";
+import { resolvePaperclipEnvValue } from "./env-alias.js";
 
 const DEFAULT_INSTANCE_ID = "default";
 const INSTANCE_ID_RE = /^[a-zA-Z0-9_-]+$/;
@@ -13,13 +14,13 @@ function expandHomePrefix(value: string): string {
 }
 
 export function resolvePaperclipHomeDir(): string {
-  const envHome = process.env.PAPERCLIP_HOME?.trim();
+  const envHome = resolvePaperclipEnvValue("PAPERCLIP_HOME")?.trim();
   if (envHome) return path.resolve(expandHomePrefix(envHome));
   return path.resolve(os.homedir(), ".paperclip");
 }
 
 export function resolvePaperclipInstanceId(): string {
-  const raw = process.env.PAPERCLIP_INSTANCE_ID?.trim() || DEFAULT_INSTANCE_ID;
+  const raw = resolvePaperclipEnvValue("PAPERCLIP_INSTANCE_ID")?.trim() || DEFAULT_INSTANCE_ID;
   if (!INSTANCE_ID_RE.test(raw)) {
     throw new Error(`Invalid PAPERCLIP_INSTANCE_ID '${raw}'.`);
   }

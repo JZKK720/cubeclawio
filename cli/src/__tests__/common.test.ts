@@ -18,6 +18,9 @@ describe("resolveCommandContext", () => {
     delete process.env.PAPERCLIP_API_URL;
     delete process.env.PAPERCLIP_API_KEY;
     delete process.env.PAPERCLIP_COMPANY_ID;
+    delete process.env.CUBECLOUDIO_API_URL;
+    delete process.env.CUBECLOUDIO_API_KEY;
+    delete process.env.CUBECLOUDIO_COMPANY_ID;
   });
 
   afterEach(() => {
@@ -94,5 +97,32 @@ describe("resolveCommandContext", () => {
     expect(() =>
       resolveCommandContext({ context: contextPath, apiBase: "http://localhost:3100" }, { requireCompany: true }),
     ).toThrow(/Company ID is required/);
+  });
+
+  it("uses CUBECLOUDIO env aliases when PAPERCLIP env vars are absent", () => {
+    process.env.CUBECLOUDIO_API_URL = "http://localhost:3900";
+    process.env.CUBECLOUDIO_API_KEY = "cube-token";
+    process.env.CUBECLOUDIO_COMPANY_ID = "company-cube";
+
+    const resolved = resolveCommandContext({}, { requireCompany: true });
+
+    expect(resolved.api.apiBase).toBe("http://localhost:3900");
+    expect(resolved.api.apiKey).toBe("cube-token");
+    expect(resolved.companyId).toBe("company-cube");
+  });
+
+  it("prefers CUBECLOUDIO env aliases over PAPERCLIP env vars", () => {
+    process.env.PAPERCLIP_API_URL = "http://localhost:3100";
+    process.env.PAPERCLIP_API_KEY = "paperclip-token";
+    process.env.PAPERCLIP_COMPANY_ID = "company-paperclip";
+    process.env.CUBECLOUDIO_API_URL = "http://localhost:4900";
+    process.env.CUBECLOUDIO_API_KEY = "cube-token";
+    process.env.CUBECLOUDIO_COMPANY_ID = "company-cube";
+
+    const resolved = resolveCommandContext({}, { requireCompany: true });
+
+    expect(resolved.api.apiBase).toBe("http://localhost:4900");
+    expect(resolved.api.apiKey).toBe("cube-token");
+    expect(resolved.companyId).toBe("company-cube");
   });
 });

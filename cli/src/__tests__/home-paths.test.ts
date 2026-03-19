@@ -33,6 +33,17 @@ describe("home path resolution", () => {
     expect(resolvePaperclipInstanceId("dev_1")).toBe("dev_1");
   });
 
+  it("supports CUBECLOUDIO_HOME and CUBECLOUDIO_INSTANCE_ID aliases", () => {
+    delete process.env.PAPERCLIP_HOME;
+    delete process.env.PAPERCLIP_INSTANCE_ID;
+    process.env.CUBECLOUDIO_HOME = "~/cubecloudio-home";
+    process.env.CUBECLOUDIO_INSTANCE_ID = "cube_dev";
+
+    const home = resolvePaperclipHomeDir();
+    expect(home).toBe(path.resolve(os.homedir(), "cubecloudio-home"));
+    expect(resolvePaperclipInstanceId()).toBe("cube_dev");
+  });
+
   it("rejects invalid instance ids", () => {
     expect(() => resolvePaperclipInstanceId("bad/id")).toThrow(/Invalid instance id/);
   });

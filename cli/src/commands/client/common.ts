@@ -3,6 +3,7 @@ import type { Command } from "commander";
 import { readConfig } from "../../config/store.js";
 import { readContext, resolveProfile, type ClientContextProfile } from "../../client/context.js";
 import { ApiRequestError, PaperclipApiClient } from "../../client/http.js";
+import { resolvePaperclipEnvValue } from "../../config/env-alias.js";
 
 export interface BaseClientOptions {
   config?: string;
@@ -49,18 +50,18 @@ export function resolveCommandContext(
 
   const apiBase =
     options.apiBase?.trim() ||
-    process.env.PAPERCLIP_API_URL?.trim() ||
+    resolvePaperclipEnvValue("PAPERCLIP_API_URL")?.trim() ||
     profile.apiBase ||
     inferApiBaseFromConfig(options.config);
 
   const apiKey =
     options.apiKey?.trim() ||
-    process.env.PAPERCLIP_API_KEY?.trim() ||
+    resolvePaperclipEnvValue("PAPERCLIP_API_KEY")?.trim() ||
     readKeyFromProfileEnv(profile);
 
   const companyId =
     options.companyId?.trim() ||
-    process.env.PAPERCLIP_COMPANY_ID?.trim() ||
+    resolvePaperclipEnvValue("PAPERCLIP_COMPANY_ID")?.trim() ||
     profile.companyId;
 
   if (opts?.requireCompany && !companyId) {
@@ -150,8 +151,8 @@ function renderValue(value: unknown): string {
 }
 
 function inferApiBaseFromConfig(configPath?: string): string {
-  const envHost = process.env.PAPERCLIP_SERVER_HOST?.trim() || "localhost";
-  let port = Number(process.env.PAPERCLIP_SERVER_PORT || "");
+  const envHost = resolvePaperclipEnvValue("PAPERCLIP_SERVER_HOST")?.trim() || "localhost";
+  let port = Number(resolvePaperclipEnvValue("PAPERCLIP_SERVER_PORT") || "");
 
   if (!Number.isFinite(port) || port <= 0) {
     try {

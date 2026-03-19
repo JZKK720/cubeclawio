@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { resolveDefaultContextPath } from "../config/home.js";
+import { resolvePaperclipEnvValue } from "../config/env-alias.js";
 
 const DEFAULT_CONTEXT_BASENAME = "context.json";
 const DEFAULT_PROFILE = "default";
@@ -37,7 +38,8 @@ function findContextFileFromAncestors(startDir: string): string | null {
 
 export function resolveContextPath(overridePath?: string): string {
   if (overridePath) return path.resolve(overridePath);
-  if (process.env.PAPERCLIP_CONTEXT) return path.resolve(process.env.PAPERCLIP_CONTEXT);
+  const envContextPath = resolvePaperclipEnvValue("PAPERCLIP_CONTEXT");
+  if (envContextPath) return path.resolve(envContextPath);
   return findContextFileFromAncestors(process.cwd()) ?? resolveDefaultContextPath();
 }
 

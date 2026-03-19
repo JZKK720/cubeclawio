@@ -5,6 +5,7 @@ import {
   resolveDefaultConfigPath,
   resolvePaperclipInstanceId,
 } from "./home.js";
+import { resolvePaperclipEnvValue } from "./env-alias.js";
 
 const DEFAULT_CONFIG_BASENAME = "config.json";
 
@@ -28,7 +29,8 @@ function findConfigFileFromAncestors(startDir: string): string | null {
 
 export function resolveConfigPath(overridePath?: string): string {
   if (overridePath) return path.resolve(overridePath);
-  if (process.env.PAPERCLIP_CONFIG) return path.resolve(process.env.PAPERCLIP_CONFIG);
+  const envConfigPath = resolvePaperclipEnvValue("PAPERCLIP_CONFIG");
+  if (envConfigPath) return path.resolve(envConfigPath);
   return findConfigFileFromAncestors(process.cwd()) ?? resolveDefaultConfigPath(resolvePaperclipInstanceId());
 }
 
