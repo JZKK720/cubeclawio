@@ -50,8 +50,8 @@ import {
   SlidersHorizontal,
   Trash2,
 } from "lucide-react";
-import type { ActivityEvent } from "@cubeclawhub/shared";
-import type { Agent, IssueAttachment } from "@cubeclawhub/shared";
+import type { ActivityEvent } from "@cubeclawio/shared";
+import type { Agent, IssueAttachment } from "@cubeclawio/shared";
 
 type CommentReassignment = {
   assigneeAgentId: string | null;

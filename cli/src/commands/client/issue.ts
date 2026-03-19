@@ -6,7 +6,7 @@ import {
   updateIssueSchema,
   type Issue,
   type IssueComment,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

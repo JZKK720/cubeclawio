@@ -1,4 +1,4 @@
-import type { CreateConfigValues } from "@cubeclawhub/adapter-utils";
+import type { CreateConfigValues } from "@cubeclawio/adapter-utils";
 
 function parseJsonObject(text: string): Record<string, unknown> | null {
   const trimmed = text.trim();

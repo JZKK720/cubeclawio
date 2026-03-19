@@ -1,7 +1,7 @@
 import type {
   InstanceExperimentalSettings,
   PatchInstanceExperimentalSettings,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const instanceSettingsApi = {

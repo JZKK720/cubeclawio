@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="doc/assets/header.png" alt="CubeClawHub — runs your business" width="720" />
+  <img src="doc/assets/header.png" alt="CubeClawIO — runs your business" width="720" />
 </p>
 
 <p align="center">
@@ -23,13 +23,13 @@
 
 <br/>
 
-## What is CubeClawHub?
+## What is CubeClawIO?
 
 # Open-source orchestration for zero-human companies
 
-**If OpenClaw is an _employee_, CubeClawHub is the _company_**
+**If OpenClaw is an _employee_, CubeClawIO is the _company_**
 
-CubeClawHub is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track your agents' work and costs from one dashboard.
+CubeClawIO is a Node.js server and React UI that orchestrates a team of AI agents to run a business. Bring your own agents, assign goals, and track your agents' work and costs from one dashboard.
 
 It looks like a task manager — but under the hood it has org charts, budgets, governance, goal alignment, and agent coordination.
 
@@ -66,7 +66,7 @@ It looks like a task manager — but under the hood it has org charts, budgets, 
 
 <br/>
 
-## CubeClawHub is right for you if
+## CubeClawIO is right for you if
 
 - ✅ You want to build **autonomous AI companies**
 - ✅ You **coordinate many different agents** (OpenClaw, Codex, Claude, Cursor) toward a common goal

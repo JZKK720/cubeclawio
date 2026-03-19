@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { isCodexUnknownSessionError, parseCodexJsonl } from "@cubeclawhub/adapter-codex-local/server";
-import { parseCodexStdoutLine } from "@cubeclawhub/adapter-codex-local/ui";
-import { printCodexStreamEvent } from "@cubeclawhub/adapter-codex-local/cli";
+import { isCodexUnknownSessionError, parseCodexJsonl } from "@cubeclawio/adapter-codex-local/server";
+import { parseCodexStdoutLine } from "@cubeclawio/adapter-codex-local/ui";
+import { printCodexStreamEvent } from "@cubeclawio/adapter-codex-local/cli";
 
 describe("codex_local parser", () => {
   it("extracts session, summary, usage, and terminal error message", () => {

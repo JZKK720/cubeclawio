@@ -1,12 +1,12 @@
 import { Router, type Request } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   createProjectSchema,
   createProjectWorkspaceSchema,
   isUuidLike,
   updateProjectSchema,
   updateProjectWorkspaceSchema,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { validate } from "../middleware/validate.js";
 import { projectService, logActivity } from "../services/index.js";
 import { conflict } from "../errors.js";

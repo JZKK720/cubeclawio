@@ -1,4 +1,4 @@
-import type { ActivityEvent } from "@cubeclawhub/shared";
+import type { ActivityEvent } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export interface RunForIssue {

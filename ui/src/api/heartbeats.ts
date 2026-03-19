@@ -3,7 +3,7 @@ import type {
   HeartbeatRunEvent,
   InstanceSchedulerHeartbeatAgent,
   WorkspaceOperation,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { api } from "./client";
 
 export interface ActiveRunForIssue extends HeartbeatRun {

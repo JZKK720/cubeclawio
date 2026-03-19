@@ -29,8 +29,8 @@ import type {
   IssueDocumentSummary,
   Agent,
   Goal,
-} from "@cubeclawhub/shared";
-export type { PluginLauncherRenderContextSnapshot } from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
+export type { PluginLauncherRenderContextSnapshot } from "@cubeclawio/shared";
 
 import type {
   PluginEvent,

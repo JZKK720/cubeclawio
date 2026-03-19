@@ -1,4 +1,4 @@
-import { definePlugin, runWorker } from "@cubeclawhub/plugin-sdk";
+import { definePlugin, runWorker } from "@cubeclawio/plugin-sdk";
 
 const plugin = definePlugin({
   async setup(ctx) {

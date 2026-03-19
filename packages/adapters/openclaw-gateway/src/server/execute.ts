@@ -2,8 +2,8 @@ import type {
   AdapterExecutionContext,
   AdapterExecutionResult,
   AdapterRuntimeServiceReport,
-} from "@cubeclawhub/adapter-utils";
-import { asNumber, asString, buildPaperclipEnv, parseObject } from "@cubeclawhub/adapter-utils/server-utils";
+} from "@cubeclawio/adapter-utils";
+import { asNumber, asString, buildPaperclipEnv, parseObject } from "@cubeclawio/adapter-utils/server-utils";
 import crypto, { randomUUID } from "node:crypto";
 import { WebSocket } from "ws";
 

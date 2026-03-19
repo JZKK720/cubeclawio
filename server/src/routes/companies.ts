@@ -1,12 +1,12 @@
 import { Router } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   companyPortabilityExportSchema,
   companyPortabilityImportSchema,
   companyPortabilityPreviewSchema,
   createCompanySchema,
   updateCompanySchema,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { forbidden } from "../errors.js";
 import { validate } from "../middleware/validate.js";
 import {

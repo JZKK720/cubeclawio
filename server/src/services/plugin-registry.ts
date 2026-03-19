@@ -1,5 +1,5 @@
 import { asc, eq, ne, sql, and } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   plugins,
   pluginConfig,
@@ -7,7 +7,7 @@ import {
   pluginJobs,
   pluginJobRuns,
   pluginWebhookDeliveries,
-} from "@cubeclawhub/db";
+} from "@cubeclawio/db";
 import type {
   PaperclipPluginManifestV1,
   PluginStatus,
@@ -24,7 +24,7 @@ import type {
   PluginJobRunStatus,
   PluginJobRunTrigger,
   PluginWebhookDeliveryStatus,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { conflict, notFound } from "../errors.js";
 
 // ---------------------------------------------------------------------------

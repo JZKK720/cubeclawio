@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from "node:fs";
 import { resolvePaperclipConfigPath, resolvePaperclipEnvPath } from "./paths.js";
-import type { DeploymentExposure, DeploymentMode } from "@cubeclawhub/shared";
+import type { DeploymentExposure, DeploymentMode } from "@cubeclawio/shared";
 
 import { parse as parseEnvFileContents } from "dotenv";
 

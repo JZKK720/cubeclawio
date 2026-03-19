@@ -6,7 +6,7 @@ import {
   resubmitApprovalSchema,
   type Approval,
   type ApprovalComment,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

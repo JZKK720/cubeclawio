@@ -1,4 +1,4 @@
-import type { TranscriptEntry } from "@cubeclawhub/adapter-utils";
+import type { TranscriptEntry } from "@cubeclawio/adapter-utils";
 
 function asRecord(value: unknown): Record<string, unknown> | null {
   if (typeof value !== "object" || value === null || Array.isArray(value)) return null;

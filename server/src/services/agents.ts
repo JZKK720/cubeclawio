@@ -1,6 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import { and, desc, eq, gte, inArray, lt, ne, sql } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   agents,
   agentConfigRevisions,
@@ -11,8 +11,8 @@ import {
   costEvents,
   heartbeatRunEvents,
   heartbeatRuns,
-} from "@cubeclawhub/db";
-import { isUuidLike, normalizeAgentUrlKey } from "@cubeclawhub/shared";
+} from "@cubeclawio/db";
+import { isUuidLike, normalizeAgentUrlKey } from "@cubeclawio/shared";
 import { conflict, notFound, unprocessable } from "../errors.js";
 import { normalizeAgentPermissions } from "./agent-permissions.js";
 import { REDACTED_EVENT_VALUE, sanitizeRecord } from "../redaction.js";

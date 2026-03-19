@@ -8,7 +8,7 @@ import type {
   IssueLabel,
   IssueWorkProduct,
   UpsertIssueDocument,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const issuesApi = {

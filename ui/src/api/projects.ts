@@ -1,4 +1,4 @@
-import type { Project, ProjectWorkspace } from "@cubeclawhub/shared";
+import type { Project, ProjectWorkspace } from "@cubeclawio/shared";
 import { api } from "./client";
 
 function withCompanyScope(path: string, companyId?: string) {

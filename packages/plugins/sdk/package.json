@@ -1,5 +1,5 @@
 {
-  "name": "@cubeclawhub/plugin-sdk",
+  "name": "@cubeclawio/plugin-sdk",
   "version": "1.0.0",
   "description": "Stable public API for Paperclip plugins — worker-side context and UI bridge hooks",
   "license": "MIT",
@@ -101,13 +101,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "corepack pnpm --filter @cubeclawhub/shared build && tsc",
+    "build": "corepack pnpm --filter @cubeclawio/shared build && tsc",
     "clean": "rm -rf dist",
-    "typecheck": "corepack pnpm --filter @cubeclawhub/shared build && tsc --noEmit",
+    "typecheck": "corepack pnpm --filter @cubeclawio/shared build && tsc --noEmit",
     "dev:server": "tsx src/dev-cli.ts"
   },
   "dependencies": {
-    "@cubeclawhub/shared": "workspace:*",
+    "@cubeclawio/shared": "workspace:*",
     "zod": "^3.24.2"
   },
   "devDependencies": {

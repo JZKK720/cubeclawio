@@ -10,13 +10,13 @@ import { fileURLToPath } from "node:url";
 import { Router } from "express";
 import type { Request } from "express";
 import { and, eq, isNull, desc } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   agentApiKeys,
   authUsers,
   invites,
   joinRequests
-} from "@cubeclawhub/db";
+} from "@cubeclawio/db";
 import {
   acceptInviteSchema,
   claimJoinRequestApiKeySchema,
@@ -26,8 +26,8 @@ import {
   updateMemberPermissionsSchema,
   updateUserCompanyAccessSchema,
   PERMISSION_KEYS
-} from "@cubeclawhub/shared";
-import type { DeploymentExposure, DeploymentMode } from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
+import type { DeploymentExposure, DeploymentMode } from "@cubeclawio/shared";
 import {
   forbidden,
   conflict,

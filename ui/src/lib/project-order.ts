@@ -1,4 +1,4 @@
-import type { Project } from "@cubeclawhub/shared";
+import type { Project } from "@cubeclawio/shared";
 
 export const PROJECT_ORDER_UPDATED_EVENT = "paperclip:project-order-updated";
 const PROJECT_ORDER_STORAGE_PREFIX = "paperclip.projectOrder";

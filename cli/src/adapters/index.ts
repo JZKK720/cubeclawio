@@ -1,2 +1,2 @@
 export { getCLIAdapter } from "./registry.js";
-export type { CLIAdapterModule } from "@cubeclawhub/adapter-utils";
+export type { CLIAdapterModule } from "@cubeclawio/adapter-utils";

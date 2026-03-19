@@ -1,6 +1,6 @@
 import { Router } from "express";
-import type { Db } from "@cubeclawhub/db";
-import { createGoalSchema, updateGoalSchema } from "@cubeclawhub/shared";
+import type { Db } from "@cubeclawio/db";
+import { createGoalSchema, updateGoalSchema } from "@cubeclawio/shared";
 import { validate } from "../middleware/validate.js";
 import { goalService, logActivity } from "../services/index.js";
 import { assertCompanyAccess, getActorInfo } from "./authz.js";

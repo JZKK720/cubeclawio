@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { agents } from "@cubeclawhub/db";
-import type { HireApprovedPayload } from "@cubeclawhub/adapter-utils";
+import type { Db } from "@cubeclawio/db";
+import { agents } from "@cubeclawio/db";
+import type { HireApprovedPayload } from "@cubeclawio/adapter-utils";
 import { findServerAdapter } from "../adapters/registry.js";
 import { logger } from "../middleware/logger.js";
 import { logActivity } from "./activity-log.js";

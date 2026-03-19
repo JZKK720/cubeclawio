@@ -1,6 +1,6 @@
 import { and, asc, eq, isNull } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { goals } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { goals } from "@cubeclawio/db";
 
 type GoalReader = Pick<Db, "select">;
 

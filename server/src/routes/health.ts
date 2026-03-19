@@ -1,8 +1,8 @@
 import { Router } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import { and, count, eq, gt, isNull, sql } from "drizzle-orm";
-import { instanceUserRoles, invites } from "@cubeclawhub/db";
-import type { DeploymentExposure, DeploymentMode } from "@cubeclawhub/shared";
+import { instanceUserRoles, invites } from "@cubeclawio/db";
+import type { DeploymentExposure, DeploymentMode } from "@cubeclawio/shared";
 import { serverVersion } from "../version.js";
 
 export function healthRoutes(

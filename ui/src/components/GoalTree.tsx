@@ -1,4 +1,4 @@
-import type { Goal } from "@cubeclawhub/shared";
+import type { Goal } from "@cubeclawio/shared";
 import { Link } from "@/lib/router";
 import { StatusBadge } from "./StatusBadge";
 import { ChevronRight } from "lucide-react";

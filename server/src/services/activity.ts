@@ -1,6 +1,6 @@
 import { and, desc, eq, isNull, or, sql } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { activityLog, heartbeatRuns, issues } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { activityLog, heartbeatRuns, issues } from "@cubeclawio/db";
 
 export interface ActivityFilters {
   companyId: string;

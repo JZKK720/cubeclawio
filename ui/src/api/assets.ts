@@ -1,4 +1,4 @@
-import type { AssetImage } from "@cubeclawhub/shared";
+import type { AssetImage } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const assetsApi = {

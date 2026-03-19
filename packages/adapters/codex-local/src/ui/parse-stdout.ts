@@ -2,7 +2,7 @@ import {
   redactHomePathUserSegments,
   redactHomePathUserSegmentsInValue,
   type TranscriptEntry,
-} from "@cubeclawhub/adapter-utils";
+} from "@cubeclawio/adapter-utils";
 
 function safeJsonParse(text: string): unknown {
   try {

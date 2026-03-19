@@ -1,4 +1,4 @@
-import type { PaperclipPluginManifestV1 } from "@cubeclawhub/plugin-sdk";
+import type { PaperclipPluginManifestV1 } from "@cubeclawio/plugin-sdk";
 
 const PLUGIN_ID = "paperclip-file-browser-example";
 const FILES_SIDEBAR_SLOT_ID = "files-link";

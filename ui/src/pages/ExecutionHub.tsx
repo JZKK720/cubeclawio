@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import type { CompanyExecutionConnector, NormalizedExecutionRunEvent } from "@cubeclawhub/shared";
+import type { CompanyExecutionConnector, NormalizedExecutionRunEvent } from "@cubeclawio/shared";
 import { ActivitySquare, Cable, Play, RefreshCcw, Radio, Save, Trash2, Workflow } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { executionApi } from "../api/execution";

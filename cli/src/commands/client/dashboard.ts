@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import type { DashboardSummary } from "@cubeclawhub/shared";
+import type { DashboardSummary } from "@cubeclawio/shared";
 import {
   addCommonClientOptions,
   handleCommandError,

@@ -17,7 +17,7 @@ import type {
   PluginRecord,
   PluginConfig,
   PluginStatus,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { api } from "./client";
 
 /**

@@ -1,8 +1,8 @@
 import { randomBytes } from "node:crypto";
 import { and, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { companies, companyMemberships, instanceUserRoles } from "@cubeclawhub/db";
-import type { DeploymentMode } from "@cubeclawhub/shared";
+import type { Db } from "@cubeclawio/db";
+import { companies, companyMemberships, instanceUserRoles } from "@cubeclawio/db";
+import type { DeploymentMode } from "@cubeclawio/shared";
 
 const LOCAL_BOARD_USER_ID = "local-board";
 const CLAIM_TTL_MS = 1000 * 60 * 60 * 24;

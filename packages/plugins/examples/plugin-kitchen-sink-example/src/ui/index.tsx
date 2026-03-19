@@ -13,7 +13,7 @@ import {
   type PluginSettingsPageProps,
   type PluginSidebarProps,
   type PluginWidgetProps,
-} from "@cubeclawhub/plugin-sdk/ui";
+} from "@cubeclawio/plugin-sdk/ui";
 import {
   DEFAULT_CONFIG,
   JOB_KEYS,

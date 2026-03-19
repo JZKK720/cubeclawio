@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import type { ExecutionConnectorModule } from "@cubeclawhub/shared";
+import type { ExecutionConnectorModule } from "@cubeclawio/shared";
 import {
   createExecutionConnectorRegistry,
   findExecutionConnectorByAdapterType,

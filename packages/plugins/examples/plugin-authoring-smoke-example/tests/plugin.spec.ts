@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { createTestHarness } from "@cubeclawhub/plugin-sdk/testing";
+import { createTestHarness } from "@cubeclawio/plugin-sdk/testing";
 import manifest from "../src/manifest.js";
 import plugin from "../src/worker.js";
 

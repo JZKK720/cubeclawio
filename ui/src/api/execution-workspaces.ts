@@ -1,4 +1,4 @@
-import type { ExecutionWorkspace } from "@cubeclawhub/shared";
+import type { ExecutionWorkspace } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const executionWorkspacesApi = {

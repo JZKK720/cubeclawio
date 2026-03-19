@@ -2,7 +2,7 @@
  * Core types for the Paperclip plugin worker-side SDK.
  *
  * These types define the stable public API surface that plugin workers import
- * from `@cubeclawhub/plugin-sdk`.  The host provides a concrete implementation
+ * from `@cubeclawio/plugin-sdk`.  The host provides a concrete implementation
  * of `PluginContext` to the plugin at initialisation time.
  *
  * @see PLUGIN_SPEC.md §14 — SDK Surface
@@ -23,10 +23,10 @@ import type {
   IssueDocumentSummary,
   Agent,
   Goal,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 
 // ---------------------------------------------------------------------------
-// Re-exports from @cubeclawhub/shared (plugin authors import from one place)
+// Re-exports from @cubeclawio/shared (plugin authors import from one place)
 // ---------------------------------------------------------------------------
 
 export type {
@@ -67,7 +67,7 @@ export type {
   IssueDocumentSummary,
   Agent,
   Goal,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 
 // ---------------------------------------------------------------------------
 // Scope key — identifies where plugin state is stored
@@ -1039,7 +1039,7 @@ export interface PluginGoalsClient {
  * ctx.streams.close("chat");
  * ```
  *
- * @see usePluginStream in `@cubeclawhub/plugin-sdk/ui`
+ * @see usePluginStream in `@cubeclawio/plugin-sdk/ui`
  */
 export interface PluginStreamsClient {
   /**
@@ -1076,7 +1076,7 @@ export interface PluginStreamsClient {
  *
  * @example
  * ```ts
- * import { definePlugin } from "@cubeclawhub/plugin-sdk";
+ * import { definePlugin } from "@cubeclawio/plugin-sdk";
  *
  * export default definePlugin({
  *   async setup(ctx) {

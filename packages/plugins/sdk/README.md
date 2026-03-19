@@ -1,12 +1,12 @@
-# `@cubeclawhub/plugin-sdk`
+# `@cubeclawio/plugin-sdk`
 
 Official TypeScript SDK for Paperclip plugin authors.
 
-- **Worker SDK:** `@cubeclawhub/plugin-sdk` — `definePlugin`, context, lifecycle
-- **UI SDK:** `@cubeclawhub/plugin-sdk/ui` — React hooks and slot props
-- **Testing:** `@cubeclawhub/plugin-sdk/testing` — in-memory host harness
-- **Bundlers:** `@cubeclawhub/plugin-sdk/bundlers` — esbuild/rollup presets
-- **Dev server:** `@cubeclawhub/plugin-sdk/dev-server` — static UI server + SSE reload
+- **Worker SDK:** `@cubeclawio/plugin-sdk` — `definePlugin`, context, lifecycle
+- **UI SDK:** `@cubeclawio/plugin-sdk/ui` — React hooks and slot props
+- **Testing:** `@cubeclawio/plugin-sdk/testing` — in-memory host harness
+- **Bundlers:** `@cubeclawio/plugin-sdk/bundlers` — esbuild/rollup presets
+- **Dev server:** `@cubeclawio/plugin-sdk/dev-server` — static UI server + SSE reload
 
 Reference: `doc/plugins/PLUGIN_SPEC.md`
 
@@ -14,15 +14,15 @@ Reference: `doc/plugins/PLUGIN_SPEC.md`
 
 | Import | Purpose |
 |--------|--------|
-| `@cubeclawhub/plugin-sdk` | Worker entry: `definePlugin`, `runWorker`, context types, protocol helpers |
-| `@cubeclawhub/plugin-sdk/ui` | UI entry: `usePluginData`, `usePluginAction`, `usePluginStream`, `useHostContext`, slot prop types |
-| `@cubeclawhub/plugin-sdk/ui/hooks` | Hooks only |
-| `@cubeclawhub/plugin-sdk/ui/types` | UI types and slot prop interfaces |
-| `@cubeclawhub/plugin-sdk/testing` | `createTestHarness` for unit/integration tests |
-| `@cubeclawhub/plugin-sdk/bundlers` | `createPluginBundlerPresets` for worker/manifest/ui builds |
-| `@cubeclawhub/plugin-sdk/dev-server` | `startPluginDevServer`, `getUiBuildSnapshot` |
-| `@cubeclawhub/plugin-sdk/protocol` | JSON-RPC protocol types and helpers (advanced) |
-| `@cubeclawhub/plugin-sdk/types` | Worker context and API types (advanced) |
+| `@cubeclawio/plugin-sdk` | Worker entry: `definePlugin`, `runWorker`, context types, protocol helpers |
+| `@cubeclawio/plugin-sdk/ui` | UI entry: `usePluginData`, `usePluginAction`, `usePluginStream`, `useHostContext`, slot prop types |
+| `@cubeclawio/plugin-sdk/ui/hooks` | Hooks only |
+| `@cubeclawio/plugin-sdk/ui/types` | UI types and slot prop interfaces |
+| `@cubeclawio/plugin-sdk/testing` | `createTestHarness` for unit/integration tests |
+| `@cubeclawio/plugin-sdk/bundlers` | `createPluginBundlerPresets` for worker/manifest/ui builds |
+| `@cubeclawio/plugin-sdk/dev-server` | `startPluginDevServer`, `getUiBuildSnapshot` |
+| `@cubeclawio/plugin-sdk/protocol` | JSON-RPC protocol types and helpers (advanced) |
+| `@cubeclawio/plugin-sdk/types` | Worker context and API types (advanced) |
 
 ## Manifest entrypoints
 
@@ -34,7 +34,7 @@ In your plugin manifest you declare:
 ## Install
 
 ```bash
-pnpm add @cubeclawhub/plugin-sdk
+pnpm add @cubeclawio/plugin-sdk
 ```
 
 ## Current deployment caveats
@@ -55,7 +55,7 @@ If you are authoring a plugin for others to deploy, treat npm-packaged installat
 ## Worker quick start
 
 ```ts
-import { definePlugin, runWorker } from "@cubeclawhub/plugin-sdk";
+import { definePlugin, runWorker } from "@cubeclawio/plugin-sdk";
 
 const plugin = definePlugin({
   async setup(ctx) {
@@ -218,7 +218,7 @@ The same set of values is used as **slot types** (where a component mounts) and 
 
 **Scope** describes whether the slot requires an entity to render. **Global** slots render without a specific entity but still receive the active `companyId` through `PluginHostContext` — use it to scope data fetches to the current company. **Entity** slots additionally require `entityId` and `entityType` (e.g. a detail tab on a specific issue).
 
-**Entity types** (for `entityTypes` on slots): `project` \| `issue` \| `agent` \| `goal` \| `run` \| `comment`. Full list: import `PLUGIN_UI_SLOT_TYPES` and `PLUGIN_UI_SLOT_ENTITY_TYPES` from `@cubeclawhub/plugin-sdk`.
+**Entity types** (for `entityTypes` on slots): `project` \| `issue` \| `agent` \| `goal` \| `run` \| `comment`. Full list: import `PLUGIN_UI_SLOT_TYPES` and `PLUGIN_UI_SLOT_ENTITY_TYPES` from `@cubeclawio/plugin-sdk`.
 
 ### Slot component descriptions
 
@@ -334,12 +334,12 @@ Declare in `manifest.capabilities`. Grouped by scope:
 | | `ui.commentAnnotation.register` |
 | | `ui.action.register` |
 
-Full list in code: import `PLUGIN_CAPABILITIES` from `@cubeclawhub/plugin-sdk`.
+Full list in code: import `PLUGIN_CAPABILITIES` from `@cubeclawio/plugin-sdk`.
 
 ## UI quick start
 
 ```tsx
-import { usePluginData, usePluginAction } from "@cubeclawhub/plugin-sdk/ui";
+import { usePluginData, usePluginAction } from "@cubeclawio/plugin-sdk/ui";
 
 export function DashboardWidget() {
   const { data } = usePluginData<{ status: string }>("health");
@@ -361,7 +361,7 @@ export function DashboardWidget() {
 Fetches data from the worker's registered `getData` handler. Re-fetches when `params` changes. Returns `{ data, loading, error, refresh }`.
 
 ```tsx
-import { usePluginData } from "@cubeclawhub/plugin-sdk/ui";
+import { usePluginData } from "@cubeclawio/plugin-sdk/ui";
 
 interface SyncStatus {
   lastSyncAt: string;
@@ -394,7 +394,7 @@ Returns an async function that calls the worker's `performAction` handler. Throw
 
 ```tsx
 import { useState } from "react";
-import { usePluginAction, type PluginBridgeError } from "@cubeclawhub/plugin-sdk/ui";
+import { usePluginAction, type PluginBridgeError } from "@cubeclawio/plugin-sdk/ui";
 
 export function ResyncButton({ context }: PluginWidgetProps) {
   const resync = usePluginAction("resync");
@@ -429,8 +429,8 @@ export function ResyncButton({ context }: PluginWidgetProps) {
 Reads the active company, project, entity, and user context. Use this to scope data fetches and actions.
 
 ```tsx
-import { useHostContext, usePluginData } from "@cubeclawhub/plugin-sdk/ui";
-import type { PluginDetailTabProps } from "@cubeclawhub/plugin-sdk/ui";
+import { useHostContext, usePluginData } from "@cubeclawio/plugin-sdk/ui";
+import type { PluginDetailTabProps } from "@cubeclawio/plugin-sdk/ui";
 
 export function IssueLinearLink({ context }: PluginDetailTabProps) {
   const { companyId, entityId, entityType } = context;
@@ -449,7 +449,7 @@ export function IssueLinearLink({ context }: PluginDetailTabProps) {
 Subscribes to a real-time event stream pushed from the plugin worker via SSE. The worker pushes events using `ctx.streams.emit(channel, event)` and the hook receives them as they arrive. Returns `{ events, lastEvent, connecting, connected, error, close }`.
 
 ```tsx
-import { usePluginStream } from "@cubeclawhub/plugin-sdk/ui";
+import { usePluginStream } from "@cubeclawio/plugin-sdk/ui";
 
 interface ChatToken {
   text: string;
@@ -478,7 +478,7 @@ The current host does **not** provide a real shared component library to plugins
 
 ### Slot component props
 
-Each slot type receives a typed props object with `context: PluginHostContext`. Import from `@cubeclawhub/plugin-sdk/ui`.
+Each slot type receives a typed props object with `context: PluginHostContext`. Import from `@cubeclawio/plugin-sdk/ui`.
 
 | Slot type | Props interface | `context` extras |
 |-----------|----------------|------------------|
@@ -496,8 +496,8 @@ Each slot type receives a typed props object with `context: PluginHostContext`. 
 Example detail tab with entity context:
 
 ```tsx
-import type { PluginDetailTabProps } from "@cubeclawhub/plugin-sdk/ui";
-import { usePluginData } from "@cubeclawhub/plugin-sdk/ui";
+import type { PluginDetailTabProps } from "@cubeclawio/plugin-sdk/ui";
+import { usePluginData } from "@cubeclawio/plugin-sdk/ui";
 
 export function AgentMetricsTab({ context }: PluginDetailTabProps) {
   const { data, loading } = usePluginData<Record<string, string>>("agent-metrics", {
@@ -586,7 +586,7 @@ Plugins can add a link under each project in the sidebar via the `projectSidebar
 Minimal React component that links to the project’s plugin tab (see project detail tabs in the spec):
 
 ```tsx
-import type { PluginProjectSidebarItemProps } from "@cubeclawhub/plugin-sdk/ui";
+import type { PluginProjectSidebarItemProps } from "@cubeclawio/plugin-sdk/ui";
 
 export function FilesLink({ context }: PluginProjectSidebarItemProps) {
   const projectId = context.entityId;
@@ -635,7 +635,7 @@ import { useState } from "react";
 import {
   useHostContext,
   usePluginAction,
-} from "@cubeclawhub/plugin-sdk/ui";
+} from "@cubeclawio/plugin-sdk/ui";
 
 export function SyncToolbarButton() {
   const context = useHostContext();
@@ -792,7 +792,7 @@ ctx.actions.register("ask-agent", async (params) => {
 
 ```tsx
 import { useState } from "react";
-import { usePluginAction, usePluginStream } from "@cubeclawhub/plugin-sdk/ui";
+import { usePluginAction, usePluginStream } from "@cubeclawio/plugin-sdk/ui";
 
 interface AgentEvent {
   type: "chunk" | "done" | "error";
@@ -851,7 +851,7 @@ Exported types: `AgentSession`, `AgentSessionEvent`, `AgentSessionSendResult`, `
 ## Testing utilities
 
 ```ts
-import { createTestHarness } from "@cubeclawhub/plugin-sdk/testing";
+import { createTestHarness } from "@cubeclawio/plugin-sdk/testing";
 import plugin from "../src/worker.js";
 import manifest from "../src/manifest.js";
 
@@ -863,7 +863,7 @@ await harness.emit("issue.created", { issueId: "iss_1" }, { entityId: "iss_1", e
 ## Bundler presets
 
 ```ts
-import { createPluginBundlerPresets } from "@cubeclawhub/plugin-sdk/bundlers";
+import { createPluginBundlerPresets } from "@cubeclawio/plugin-sdk/bundlers";
 
 const presets = createPluginBundlerPresets({ uiEntry: "src/ui/index.tsx" });
 // presets.esbuild.worker / presets.esbuild.manifest / presets.esbuild.ui
@@ -879,7 +879,7 @@ paperclip-plugin-dev-server --root . --ui-dir dist/ui --port 4177
 Or programmatically:
 
 ```ts
-import { startPluginDevServer } from "@cubeclawhub/plugin-sdk/dev-server";
+import { startPluginDevServer } from "@cubeclawio/plugin-sdk/dev-server";
 const server = await startPluginDevServer({ rootDir: process.cwd() });
 ```
 

@@ -22,11 +22,11 @@ export {
   ensurePathInEnv,
   ensureAbsoluteDirectory,
   ensureCommandResolvable,
-} from "@cubeclawhub/adapter-utils/server-utils";
+} from "@cubeclawio/adapter-utils/server-utils";
 
 // Re-export runChildProcess with the server's pino logger wired in.
-import { runChildProcess as _runChildProcess } from "@cubeclawhub/adapter-utils/server-utils";
-import type { RunProcessResult } from "@cubeclawhub/adapter-utils/server-utils";
+import { runChildProcess as _runChildProcess } from "@cubeclawio/adapter-utils/server-utils";
+import type { RunProcessResult } from "@cubeclawio/adapter-utils/server-utils";
 
 export async function runChildProcess(
   runId: string,

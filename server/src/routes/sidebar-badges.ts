@@ -1,7 +1,7 @@
 import { Router } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import { and, eq, sql } from "drizzle-orm";
-import { joinRequests } from "@cubeclawhub/db";
+import { joinRequests } from "@cubeclawio/db";
 import { sidebarBadgeService } from "../services/sidebar-badges.js";
 import { accessService } from "../services/access.js";
 import { dashboardService } from "../services/dashboard.js";

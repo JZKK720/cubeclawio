@@ -31,14 +31,14 @@
  */
 
 import { and, desc, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { plugins, pluginJobs, pluginJobRuns } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { plugins, pluginJobs, pluginJobRuns } from "@cubeclawio/db";
 import type {
   PluginJobDeclaration,
   PluginJobRunStatus,
   PluginJobRunTrigger,
   PluginJobRecord,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { notFound } from "../errors.js";
 
 /**

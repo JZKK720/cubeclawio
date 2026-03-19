@@ -7,7 +7,7 @@ import type {
   NormalizedExecutionArtifact,
   NormalizedExecutionRun,
   NormalizedExecutionRunEvent,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { api } from "./client";
 
 type ConnectorConfigInput = {

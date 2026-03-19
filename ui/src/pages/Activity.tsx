@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { History } from "lucide-react";
-import type { Agent } from "@cubeclawhub/shared";
+import type { Agent } from "@cubeclawio/shared";
 
 export function Activity() {
   const { selectedCompanyId } = useCompany();

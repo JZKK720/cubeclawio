@@ -1,7 +1,7 @@
 import { and, desc, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { issueWorkProducts } from "@cubeclawhub/db";
-import type { IssueWorkProduct } from "@cubeclawhub/shared";
+import type { Db } from "@cubeclawio/db";
+import { issueWorkProducts } from "@cubeclawio/db";
+import type { IssueWorkProduct } from "@cubeclawio/shared";
 
 type IssueWorkProductRow = typeof issueWorkProducts.$inferSelect;
 

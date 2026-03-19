@@ -1,4 +1,4 @@
-import type { CLIAdapterModule } from "@cubeclawhub/adapter-utils";
+import type { CLIAdapterModule } from "@cubeclawio/adapter-utils";
 import { printHttpStdoutEvent } from "./format-event.js";
 
 export const httpCLIAdapter: CLIAdapterModule = {

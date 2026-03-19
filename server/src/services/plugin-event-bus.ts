@@ -20,8 +20,8 @@
  * @see PLUGIN_SPEC.md §16.2 — Plugin-to-Plugin Events
  */
 
-import type { PluginEventType } from "@cubeclawhub/shared";
-import type { PluginEvent, EventFilter } from "@cubeclawhub/plugin-sdk";
+import type { PluginEventType } from "@cubeclawio/shared";
+import type { PluginEvent, EventFilter } from "@cubeclawio/plugin-sdk";
 
 // ---------------------------------------------------------------------------
 // Internal types

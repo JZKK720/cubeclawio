@@ -1,6 +1,6 @@
 import { lt, sql } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { pluginLogs } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { pluginLogs } from "@cubeclawio/db";
 import { logger } from "../middleware/logger.js";
 
 /** Default retention period: 7 days. */

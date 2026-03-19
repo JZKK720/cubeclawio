@@ -1,12 +1,12 @@
 import { Router } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   createCostEventSchema,
   createFinanceEventSchema,
   resolveBudgetIncidentSchema,
   updateBudgetSchema,
   upsertBudgetPolicySchema,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { validate } from "../middleware/validate.js";
 import {
   budgetService,

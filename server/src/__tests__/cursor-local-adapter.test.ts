@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
-import { isCursorUnknownSessionError, parseCursorJsonl } from "@cubeclawhub/adapter-cursor-local/server";
-import { parseCursorStdoutLine } from "@cubeclawhub/adapter-cursor-local/ui";
-import { printCursorStreamEvent } from "@cubeclawhub/adapter-cursor-local/cli";
+import { isCursorUnknownSessionError, parseCursorJsonl } from "@cubeclawio/adapter-cursor-local/server";
+import { parseCursorStdoutLine } from "@cubeclawio/adapter-cursor-local/ui";
+import { printCursorStreamEvent } from "@cubeclawio/adapter-cursor-local/cli";
 
 describe("cursor parser", () => {
   it("extracts session, summary, usage, cost, and terminal error message", () => {

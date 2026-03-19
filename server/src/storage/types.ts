@@ -1,4 +1,4 @@
-import type { StorageProvider as StorageProviderId } from "@cubeclawhub/shared";
+import type { StorageProvider as StorageProviderId } from "@cubeclawio/shared";
 import type { Readable } from "node:stream";
 
 export interface PutObjectInput {

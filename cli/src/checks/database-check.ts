@@ -16,7 +16,7 @@ export async function databaseCheck(config: PaperclipConfig, configPath?: string
     }
 
     try {
-      const { createDb } = await import("@cubeclawhub/db");
+      const { createDb } = await import("@cubeclawio/db");
       const db = createDb(config.database.connectionString);
       await db.execute("SELECT 1");
       return {

@@ -20,7 +20,7 @@ import {
 import { StatusIcon } from "./StatusIcon";
 import { PriorityIcon } from "./PriorityIcon";
 import { Identity } from "./Identity";
-import type { Issue } from "@cubeclawhub/shared";
+import type { Issue } from "@cubeclawio/shared";
 
 const boardStatuses = [
   "backlog",

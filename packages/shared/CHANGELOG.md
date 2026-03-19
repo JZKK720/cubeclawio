@@ -1,4 +1,4 @@
-# @cubeclawhub/shared
+# @cubeclawio/shared
 
 ## 0.3.1
 

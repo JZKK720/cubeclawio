@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import type { ActivityEvent } from "@cubeclawhub/shared";
+import type { ActivityEvent } from "@cubeclawio/shared";
 import {
   addCommonClientOptions,
   formatInlineRecord,

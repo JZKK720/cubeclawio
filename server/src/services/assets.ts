@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { assets } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { assets } from "@cubeclawio/db";
 
 export function assetService(db: Db) {
   return {

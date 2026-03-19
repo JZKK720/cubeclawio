@@ -1,7 +1,7 @@
 // @vitest-environment node
 
 import { beforeEach, describe, expect, it } from "vitest";
-import type { Approval, DashboardSummary, HeartbeatRun, Issue, JoinRequest } from "@cubeclawhub/shared";
+import type { Approval, DashboardSummary, HeartbeatRun, Issue, JoinRequest } from "@cubeclawio/shared";
 import {
   computeInboxBadgeData,
   getRecentTouchedIssues,

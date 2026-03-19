@@ -1,4 +1,4 @@
-import type { Approval, ApprovalComment, Issue } from "@cubeclawhub/shared";
+import type { Approval, ApprovalComment, Issue } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const approvalsApi = {

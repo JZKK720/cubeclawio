@@ -20,4 +20,4 @@ export type {
   ResolvedSessionCompactionPolicy,
   SessionCompactionPolicy,
   ServerAdapterModule,
-} from "@cubeclawhub/adapter-utils";
+} from "@cubeclawio/adapter-utils";

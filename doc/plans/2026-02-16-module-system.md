@@ -104,7 +104,7 @@ Modules live in a top-level `modules/` directory. Each module is a pnpm workspac
 
 Key fields:
 
-- **`id`**: Unique identifier, used as the npm package name suffix (`@cubeclawhub/mod-observability`)
+- **`id`**: Unique identifier, used as the npm package name suffix (`@cubeclawio/mod-observability`)
 - **`slot`**: Optional exclusive category. If set, only one module with this slot can be active. Omit for modules that can coexist freely.
 - **`hooks`**: Which core events this module subscribes to. Declared upfront so the core knows what to emit.
 - **`routes.prefix`**: Mounted under `/api/modules/<prefix>`. The module owns this namespace.
@@ -118,7 +118,7 @@ Key fields:
 The module's `src/index.ts` exports a `register` function that receives the module API:
 
 ```typescript
-import type { ModuleAPI } from "@cubeclawhub/core";
+import type { ModuleAPI } from "@cubeclawio/core";
 import { createRouter } from "./routes.js";
 import { onHeartbeat, onBudgetThreshold } from "./hooks.js";
 
@@ -236,7 +236,7 @@ This keeps the core fast and resilient. If you need pre-commit validation (e.g.,
 
 ```typescript
 // modules/observability/src/hooks.ts
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import { tokenMetrics } from "./schema.js";
 
 export function createHeartbeatHandler(db: Db) {
@@ -382,7 +382,7 @@ export const modulePages = [
   {
     path: "/observability",
     label: "Observability",
-    component: lazy(() => import("@cubeclawhub/mod-observability/ui")),
+    component: lazy(() => import("@cubeclawio/mod-observability/ui")),
   },
 ];
 
@@ -391,7 +391,7 @@ export const dashboardWidgets = [
     id: "token-burn-rate",
     label: "Token Burn Rate",
     placement: "dashboard",
-    component: lazy(() => import("@cubeclawhub/mod-observability/ui").then(m => ({ default: m.TokenBurnRateWidget }))),
+    component: lazy(() => import("@cubeclawio/mod-observability/ui").then(m => ({ default: m.TokenBurnRateWidget }))),
   },
 ];
 ```
@@ -627,7 +627,7 @@ pnpm paperclipai store export                  # export current company as templ
 
 ### Phase 1: Core infrastructure
 
-Add to `@cubeclawhub/server`:
+Add to `@cubeclawio/server`:
 
 1. **HookBus** — Event emitter with `register()` and `emit()`, using `Promise.allSettled`
 2. **Module loader** — Scans `modules/`, validates manifests, calls `register(api)`
@@ -636,7 +636,7 @@ Add to `@cubeclawhub/server`:
 5. **Module migration runner** — Extends `db:migrate` to discover and run module migrations
 6. **Emit hooks from core services** — Add `hookBus.emit()` calls to existing CRUD operations
 
-Add to `@cubeclawhub/ui`:
+Add to `@cubeclawio/ui`:
 
 7. **Module page loader** — Reads module manifests, generates lazy routes
 8. **Dashboard widget slots** — Render module-contributed widgets on the Dashboard page
@@ -644,7 +644,7 @@ Add to `@cubeclawhub/ui`:
 
 Add new package:
 
-10. **`@cubeclawhub/module-sdk`** — TypeScript types for `ModuleAPI`, `HookEvent`, `HookHandler`, manifest schema
+10. **`@cubeclawio/module-sdk`** — TypeScript types for `ModuleAPI`, `HookEvent`, `HookHandler`, manifest schema
 
 ### Phase 2: First module (observability)
 

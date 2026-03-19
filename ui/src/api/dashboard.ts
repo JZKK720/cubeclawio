@@ -1,4 +1,4 @@
-import type { DashboardSummary } from "@cubeclawhub/shared";
+import type { DashboardSummary } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const dashboardApi = {

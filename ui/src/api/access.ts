@@ -1,4 +1,4 @@
-import type { AgentAdapterType, JoinRequest } from "@cubeclawhub/shared";
+import type { AgentAdapterType, JoinRequest } from "@cubeclawio/shared";
 import { api } from "./client";
 
 type InviteSummary = {

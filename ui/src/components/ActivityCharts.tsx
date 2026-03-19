@@ -1,4 +1,4 @@
-import type { HeartbeatRun } from "@cubeclawhub/shared";
+import type { HeartbeatRun } from "@cubeclawio/shared";
 
 /* ---- Utilities ---- */
 

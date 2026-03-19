@@ -1,4 +1,4 @@
-import type { SecretProvider, SecretProviderDescriptor } from "@cubeclawhub/shared";
+import type { SecretProvider, SecretProviderDescriptor } from "@cubeclawio/shared";
 import { localEncryptedProvider } from "./local-encrypted-provider.js";
 import {
   awsSecretsManagerProvider,

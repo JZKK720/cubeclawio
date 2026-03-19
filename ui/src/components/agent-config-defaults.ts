@@ -1,4 +1,4 @@
-import type { CreateConfigValues } from "@cubeclawhub/adapter-utils";
+import type { CreateConfigValues } from "@cubeclawio/adapter-utils";
 
 export const defaultCreateValues: CreateConfigValues = {
   adapterType: "claude_local",

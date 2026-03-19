@@ -13,5 +13,5 @@ export type {
   UsageSummary,
   AdapterAgent,
   AdapterRuntime,
-} from "@cubeclawhub/adapter-utils";
+} from "@cubeclawio/adapter-utils";
 export { runningProcesses } from "./utils.js";

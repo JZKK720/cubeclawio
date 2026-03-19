@@ -1,4 +1,4 @@
-# @cubeclawhub/plugin-kitchen-sink-example
+# @cubeclawio/plugin-kitchen-sink-example
 
 Kitchen Sink is the first-party reference plugin that demonstrates nearly the full currently implemented Paperclip plugin surface in one package.
 
@@ -20,7 +20,7 @@ This plugin is for local development, contributor onboarding, and runtime regres
 ## Install
 
 ```sh
-pnpm --filter @cubeclawhub/plugin-kitchen-sink-example build
+pnpm --filter @cubeclawio/plugin-kitchen-sink-example build
 pnpm paperclipai plugin install ./packages/plugins/examples/plugin-kitchen-sink-example
 ```
 

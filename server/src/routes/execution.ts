@@ -1,10 +1,10 @@
 import { Router, type Request } from "express";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import {
   executionConnectorConfigSchema,
   listExecutionRunEventsQuerySchema,
   testExecutionConnectorSchema,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { badRequest, forbidden } from "../errors.js";
 import { assertBoard, assertCompanyAccess, getActorInfo } from "./authz.js";
 import {

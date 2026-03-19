@@ -1,6 +1,6 @@
 import { and, desc, eq, gte, lte, sql } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { agents, costEvents, financeEvents, goals, heartbeatRuns, issues, projects } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { agents, costEvents, financeEvents, goals, heartbeatRuns, issues, projects } from "@cubeclawio/db";
 import { notFound, unprocessable } from "../errors.js";
 
 export interface FinanceDateRange {

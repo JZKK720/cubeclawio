@@ -1,4 +1,4 @@
-import type { QuotaWindow } from "@cubeclawhub/shared";
+import type { QuotaWindow } from "@cubeclawio/shared";
 import { cn, quotaSourceDisplayName } from "@/lib/utils";
 
 interface CodexSubscriptionPanelProps {

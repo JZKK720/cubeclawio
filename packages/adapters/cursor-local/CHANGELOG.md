@@ -1,4 +1,4 @@
-# @cubeclawhub/adapter-cursor-local
+# @cubeclawio/adapter-cursor-local
 
 ## 0.3.1
 
@@ -6,7 +6,7 @@
 
 - Stable release preparation for 0.3.1
 - Updated dependencies
-  - @cubeclawhub/adapter-utils@0.3.1
+  - @cubeclawio/adapter-utils@0.3.1
 
 ## 0.3.0
 
@@ -17,7 +17,7 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @cubeclawhub/adapter-utils@0.3.0
+  - @cubeclawio/adapter-utils@0.3.0
 
 ## 0.2.7
 

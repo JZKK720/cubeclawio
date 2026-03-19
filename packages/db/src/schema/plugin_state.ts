@@ -7,7 +7,7 @@ import {
   index,
   unique,
 } from "drizzle-orm/pg-core";
-import type { PluginStateScopeKind } from "@cubeclawhub/shared";
+import type { PluginStateScopeKind } from "@cubeclawio/shared";
 import { plugins } from "./plugins.js";
 
 /**

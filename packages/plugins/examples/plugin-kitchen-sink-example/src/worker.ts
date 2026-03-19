@@ -20,8 +20,8 @@ import {
   type ScopeKey,
   type ToolResult,
   type ToolRunContext,
-} from "@cubeclawhub/plugin-sdk";
-import type { Goal, Issue } from "@cubeclawhub/shared";
+} from "@cubeclawio/plugin-sdk";
+import type { Goal, Issue } from "@cubeclawio/shared";
 import {
   DEFAULT_CONFIG,
   JOB_KEYS,

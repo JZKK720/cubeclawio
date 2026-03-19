@@ -18,7 +18,7 @@ await esbuild.build({
     "react",
     "react-dom",
     "react/jsx-runtime",
-    "@cubeclawhub/plugin-sdk/ui",
+    "@cubeclawio/plugin-sdk/ui",
   ],
   logLevel: "info",
 });

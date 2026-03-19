@@ -1,4 +1,4 @@
-import type { SidebarBadges } from "@cubeclawhub/shared";
+import type { SidebarBadges } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const sidebarBadgesApi = {

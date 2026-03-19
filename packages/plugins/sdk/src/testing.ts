@@ -9,7 +9,7 @@ import type {
   IssueComment,
   Agent,
   Goal,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import type {
   EventFilter,
   PluginContext,

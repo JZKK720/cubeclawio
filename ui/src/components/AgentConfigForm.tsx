@@ -1,17 +1,17 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { AGENT_ADAPTER_TYPES } from "@cubeclawhub/shared";
+import { AGENT_ADAPTER_TYPES } from "@cubeclawio/shared";
 import {
   hasSessionCompactionThresholds,
   resolveSessionCompactionPolicy,
   type ResolvedSessionCompactionPolicy,
-} from "@cubeclawhub/adapter-utils";
+} from "@cubeclawio/adapter-utils";
 import type {
   Agent,
   AdapterEnvironmentTestResult,
   CompanySecret,
   EnvBinding,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import type { AdapterModel } from "../api/agents";
 import { agentsApi } from "../api/agents";
 import { secretsApi } from "../api/secrets";
@@ -19,9 +19,9 @@ import { assetsApi } from "../api/assets";
 import {
   DEFAULT_CODEX_LOCAL_BYPASS_APPROVALS_AND_SANDBOX,
   DEFAULT_CODEX_LOCAL_MODEL,
-} from "@cubeclawhub/adapter-codex-local";
-import { DEFAULT_CURSOR_LOCAL_MODEL } from "@cubeclawhub/adapter-cursor-local";
-import { DEFAULT_GEMINI_LOCAL_MODEL } from "@cubeclawhub/adapter-gemini-local";
+} from "@cubeclawio/adapter-codex-local";
+import { DEFAULT_CURSOR_LOCAL_MODEL } from "@cubeclawio/adapter-cursor-local";
+import { DEFAULT_GEMINI_LOCAL_MODEL } from "@cubeclawio/adapter-gemini-local";
 import {
   Popover,
   PopoverContent,
@@ -52,10 +52,10 @@ import { OpenCodeLogoIcon } from "./OpenCodeLogoIcon";
 
 /* ---- Create mode values ---- */
 
-// Canonical type lives in @cubeclawhub/adapter-utils; re-exported here
+// Canonical type lives in @cubeclawio/adapter-utils; re-exported here
 // so existing imports from this file keep working.
-export type { CreateConfigValues } from "@cubeclawhub/adapter-utils";
-import type { CreateConfigValues } from "@cubeclawhub/adapter-utils";
+export type { CreateConfigValues } from "@cubeclawio/adapter-utils";
+import type { CreateConfigValues } from "@cubeclawio/adapter-utils";
 
 /* ---- Props ---- */
 

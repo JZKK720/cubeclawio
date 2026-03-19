@@ -1,14 +1,14 @@
 import { and, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { executionConnectorConfigs } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { executionConnectorConfigs } from "@cubeclawio/db";
 import type {
   CompanyExecutionConnector,
   CompanyExecutionConnectorConfig,
   ExecutionConnectorHealth,
   IronclawGatewayConnectorConfig,
   IronclawGatewayPersistentConfig,
-} from "@cubeclawhub/shared";
-import { ironclawGatewayPersistentConfigSchema } from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
+import { ironclawGatewayPersistentConfigSchema } from "@cubeclawio/shared";
 import { getExecutionConnector, listExecutionConnectorDefinitions, testExecutionConnector } from "../connectors/index.js";
 import { badRequest, notFound } from "../errors.js";
 import { secretService } from "./secrets.js";

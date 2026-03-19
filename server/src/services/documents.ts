@@ -1,7 +1,7 @@
 import { and, asc, desc, eq } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { documentRevisions, documents, issueDocuments, issues } from "@cubeclawhub/db";
-import { issueDocumentKeySchema } from "@cubeclawhub/shared";
+import type { Db } from "@cubeclawio/db";
+import { documentRevisions, documents, issueDocuments, issues } from "@cubeclawio/db";
+import { issueDocumentKeySchema } from "@cubeclawio/shared";
 import { conflict, notFound, unprocessable } from "../errors.js";
 
 function normalizeDocumentKey(key: string) {

@@ -7,8 +7,8 @@ import type {
   HeartbeatRun,
   Approval,
   AgentConfigRevision,
-} from "@cubeclawhub/shared";
-import { isUuidLike, normalizeAgentUrlKey } from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
+import { isUuidLike, normalizeAgentUrlKey } from "@cubeclawio/shared";
 import { ApiError, api } from "./client";
 
 export interface AgentKey {

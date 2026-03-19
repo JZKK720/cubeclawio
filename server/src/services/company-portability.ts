@@ -1,6 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import type {
   CompanyPortabilityAgentManifestEntry,
   CompanyPortabilityCollisionStrategy,
@@ -13,8 +13,8 @@ import type {
   CompanyPortabilityPreview,
   CompanyPortabilityPreviewAgentPlan,
   CompanyPortabilityPreviewResult,
-} from "@cubeclawhub/shared";
-import { normalizeAgentUrlKey, portabilityManifestSchema } from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
+import { normalizeAgentUrlKey, portabilityManifestSchema } from "@cubeclawio/shared";
 import { notFound, unprocessable } from "../errors.js";
 import { accessService } from "./access.js";
 import { agentService } from "./agents.js";

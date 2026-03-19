@@ -1,4 +1,4 @@
-import type { TranscriptEntry } from "@cubeclawhub/adapter-utils";
+import type { TranscriptEntry } from "@cubeclawio/adapter-utils";
 
 function safeJsonParse(text: string): unknown {
   try {

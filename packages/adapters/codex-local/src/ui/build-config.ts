@@ -1,4 +1,4 @@
-import type { CreateConfigValues } from "@cubeclawhub/adapter-utils";
+import type { CreateConfigValues } from "@cubeclawio/adapter-utils";
 import {
   DEFAULT_CODEX_LOCAL_BYPASS_APPROVALS_AND_SANDBOX,
   DEFAULT_CODEX_LOCAL_MODEL,

@@ -3,7 +3,7 @@ import type {
   ExecutionConnectorHealth,
   ExecutionConnectorModule,
   ExecutionConnectorOperationKind,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { ironclawGatewayConnector } from "./ironclaw-gateway.js";
 
 export interface ExecutionConnectorRegistry {

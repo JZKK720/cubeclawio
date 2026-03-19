@@ -1,4 +1,4 @@
-import { definePlugin, runWorker } from "@cubeclawhub/plugin-sdk";
+import { definePlugin, runWorker } from "@cubeclawio/plugin-sdk";
 import * as fs from "node:fs";
 import * as path from "node:path";
 

@@ -1,15 +1,15 @@
-# @cubeclawhub/create-paperclip-plugin
+# @cubeclawio/create-paperclip-plugin
 
 Scaffolding tool for creating new Paperclip plugins.
 
 ```bash
-npx @cubeclawhub/create-paperclip-plugin my-plugin
+npx @cubeclawio/create-paperclip-plugin my-plugin
 ```
 
 Or with options:
 
 ```bash
-npx @cubeclawhub/create-paperclip-plugin @acme/my-plugin \
+npx @cubeclawio/create-paperclip-plugin @acme/my-plugin \
   --template connector \
   --category connector \
   --display-name "Acme Connector" \
@@ -22,16 +22,16 @@ Supported categories: `connector`, `workspace`, `automation`, `ui`
 
 Generates:
 - typed manifest + worker entrypoint
-- example UI widget using the supported `@cubeclawhub/plugin-sdk/ui` hooks
-- test file using `@cubeclawhub/plugin-sdk/testing`
+- example UI widget using the supported `@cubeclawio/plugin-sdk/ui` hooks
+- test file using `@cubeclawio/plugin-sdk/testing`
 - `esbuild` and `rollup` config files using SDK bundler presets
 - dev server script for hot-reload (`paperclip-plugin-dev-server`)
 
 The scaffold intentionally uses plain React elements rather than host-provided UI kit components, because the current plugin runtime does not ship a stable shared component library yet.
 
-Inside this repo, the generated package uses `@cubeclawhub/plugin-sdk` via `workspace:*`.
+Inside this repo, the generated package uses `@cubeclawio/plugin-sdk` via `workspace:*`.
 
-Outside this repo, the scaffold snapshots `@cubeclawhub/plugin-sdk` from your local Paperclip checkout into a `.paperclip-sdk/` tarball and points the generated package at that local file by default. You can override the SDK source explicitly:
+Outside this repo, the scaffold snapshots `@cubeclawio/plugin-sdk` from your local Paperclip checkout into a `.paperclip-sdk/` tarball and points the generated package at that local file by default. You can override the SDK source explicitly:
 
 ```bash
 node packages/plugins/create-paperclip-plugin/dist/index.js @acme/my-plugin \

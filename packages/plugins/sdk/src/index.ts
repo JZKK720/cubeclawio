@@ -1,13 +1,13 @@
 /**
- * `@cubeclawhub/plugin-sdk` — Paperclip plugin worker-side SDK.
+ * `@cubeclawio/plugin-sdk` — Paperclip plugin worker-side SDK.
  *
  * This is the main entrypoint for plugin worker code.  For plugin UI bundles,
- * import from `@cubeclawhub/plugin-sdk/ui` instead.
+ * import from `@cubeclawio/plugin-sdk/ui` instead.
  *
  * @example
  * ```ts
  * // Plugin worker entrypoint (dist/worker.ts)
- * import { definePlugin, runWorker, z } from "@cubeclawhub/plugin-sdk";
+ * import { definePlugin, runWorker, z } from "@cubeclawio/plugin-sdk";
  *
  * const plugin = definePlugin({
  *   async setup(ctx) {
@@ -206,9 +206,9 @@ export type {
   Goal,
 } from "./types.js";
 
-// Manifest and constant types re-exported from @cubeclawhub/shared
+// Manifest and constant types re-exported from @cubeclawio/shared
 // Plugin authors import manifest types from here so they have a single
-// dependency (@cubeclawhub/plugin-sdk) for all plugin authoring needs.
+// dependency (@cubeclawio/plugin-sdk) for all plugin authoring needs.
 export type {
   PaperclipPluginManifestV1,
   PluginJobDeclaration,
@@ -255,7 +255,7 @@ export type {
  *
  * @example
  * ```ts
- * import { z } from "@cubeclawhub/plugin-sdk";
+ * import { z } from "@cubeclawio/plugin-sdk";
  *
  * const configSchema = z.object({
  *   apiKey: z.string().describe("Your API key"),
@@ -283,4 +283,4 @@ export {
   PLUGIN_WEBHOOK_DELIVERY_STATUSES,
   PLUGIN_EVENT_TYPES,
   PLUGIN_BRIDGE_ERROR_CODES,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";

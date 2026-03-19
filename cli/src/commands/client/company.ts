@@ -8,7 +8,7 @@ import type {
   CompanyPortabilityManifest,
   CompanyPortabilityPreviewResult,
   CompanyPortabilityImportResult,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { ApiRequestError } from "../../client/http.js";
 import {
   addCommonClientOptions,

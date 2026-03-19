@@ -1,11 +1,11 @@
-import type { Db } from "@cubeclawhub/db";
-import { companies, instanceSettings } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { companies, instanceSettings } from "@cubeclawio/db";
 import {
   instanceExperimentalSettingsSchema,
   type InstanceExperimentalSettings,
   type InstanceSettings,
   type PatchInstanceExperimentalSettings,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { eq } from "drizzle-orm";
 
 const DEFAULT_SINGLETON_KEY = "default";

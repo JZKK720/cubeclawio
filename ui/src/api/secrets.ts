@@ -1,4 +1,4 @@
-import type { CompanySecret, SecretProviderDescriptor, SecretProvider } from "@cubeclawhub/shared";
+import type { CompanySecret, SecretProviderDescriptor, SecretProvider } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const secretsApi = {

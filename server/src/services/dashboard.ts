@@ -1,6 +1,6 @@
 import { and, eq, gte, sql } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { agents, approvals, companies, costEvents, issues } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { agents, approvals, companies, costEvents, issues } from "@cubeclawio/db";
 import { notFound } from "../errors.js";
 import { budgetService } from "./budgets.js";
 

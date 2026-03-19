@@ -9,9 +9,9 @@
  * @see PLUGIN_SPEC.md §10 — Plugin Manifest
  * @see packages/shared/src/validators/plugin.ts — Zod schema definition
  */
-import { pluginManifestV1Schema } from "@cubeclawhub/shared";
-import type { PaperclipPluginManifestV1 } from "@cubeclawhub/shared";
-import { PLUGIN_API_VERSION } from "@cubeclawhub/shared";
+import { pluginManifestV1Schema } from "@cubeclawio/shared";
+import type { PaperclipPluginManifestV1 } from "@cubeclawio/shared";
+import { PLUGIN_API_VERSION } from "@cubeclawio/shared";
 import { badRequest } from "../errors.js";
 
 // ---------------------------------------------------------------------------

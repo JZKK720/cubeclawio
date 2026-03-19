@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
-import type { AdapterModel } from "@cubeclawhub/adapter-utils";
-import { asString, runChildProcess } from "@cubeclawhub/adapter-utils/server-utils";
+import type { AdapterModel } from "@cubeclawio/adapter-utils";
+import { asString, runChildProcess } from "@cubeclawio/adapter-utils/server-utils";
 
 const MODELS_CACHE_TTL_MS = 60_000;
 

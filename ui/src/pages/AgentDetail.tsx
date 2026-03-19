@@ -70,8 +70,8 @@ import {
   type AgentRuntimeState,
   type LiveEvent,
   type WorkspaceOperation,
-} from "@cubeclawhub/shared";
-import { redactHomePathUserSegments, redactHomePathUserSegmentsInValue } from "@cubeclawhub/adapter-utils";
+} from "@cubeclawio/shared";
+import { redactHomePathUserSegments, redactHomePathUserSegmentsInValue } from "@cubeclawio/adapter-utils";
 import { agentRouteRef } from "../lib/utils";
 
 const runStatusIcons: Record<string, { icon: typeof CheckCircle2; color: string }> = {

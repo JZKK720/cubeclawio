@@ -34,9 +34,9 @@
  */
 
 import { eq, and, desc } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { companySecrets, companySecretVersions, pluginConfig } from "@cubeclawhub/db";
-import type { SecretProvider } from "@cubeclawhub/shared";
+import type { Db } from "@cubeclawio/db";
+import { companySecrets, companySecretVersions, pluginConfig } from "@cubeclawio/db";
+import type { SecretProvider } from "@cubeclawio/shared";
 import { getSecretProvider } from "../secrets/provider-registry.js";
 import { pluginRegistryService } from "./plugin-registry.js";
 

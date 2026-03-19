@@ -1,4 +1,4 @@
-import type { Goal } from "@cubeclawhub/shared";
+import type { Goal } from "@cubeclawio/shared";
 import { api } from "./client";
 
 export const goalsApi = {

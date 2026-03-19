@@ -8,7 +8,7 @@ import {
   index,
   uniqueIndex,
 } from "drizzle-orm/pg-core";
-import type { PluginCategory, PluginStatus, PaperclipPluginManifestV1 } from "@cubeclawhub/shared";
+import type { PluginCategory, PluginStatus, PaperclipPluginManifestV1 } from "@cubeclawio/shared";
 
 /**
  * `plugins` table — stores one row per installed plugin.

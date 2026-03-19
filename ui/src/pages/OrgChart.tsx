@@ -10,7 +10,7 @@ import { EmptyState } from "../components/EmptyState";
 import { PageSkeleton } from "../components/PageSkeleton";
 import { AgentIcon } from "../components/AgentIconPicker";
 import { Network } from "lucide-react";
-import { AGENT_ROLE_LABELS, type Agent } from "@cubeclawhub/shared";
+import { AGENT_ROLE_LABELS, type Agent } from "@cubeclawio/shared";
 
 // Layout constants
 const CARD_W = 200;

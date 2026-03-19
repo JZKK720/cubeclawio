@@ -1,6 +1,6 @@
 import { and, desc, eq, inArray } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { approvals, issueApprovals, issues } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { approvals, issueApprovals, issues } from "@cubeclawio/db";
 import { notFound, unprocessable } from "../errors.js";
 import { redactEventPayload } from "../redaction.js";
 

@@ -6,17 +6,17 @@
 
 - Stable release preparation for 0.3.1
 - Updated dependencies
-  - @cubeclawhub/adapter-utils@0.3.1
-  - @cubeclawhub/adapter-claude-local@0.3.1
-  - @cubeclawhub/adapter-codex-local@0.3.1
-  - @cubeclawhub/adapter-cursor-local@0.3.1
-  - @cubeclawhub/adapter-gemini-local@0.3.1
-  - @cubeclawhub/adapter-openclaw-gateway@0.3.1
-  - @cubeclawhub/adapter-opencode-local@0.3.1
-  - @cubeclawhub/adapter-pi-local@0.3.1
-  - @cubeclawhub/db@0.3.1
-  - @cubeclawhub/shared@0.3.1
-  - @cubeclawhub/server@0.3.1
+  - @cubeclawio/adapter-utils@0.3.1
+  - @cubeclawio/adapter-claude-local@0.3.1
+  - @cubeclawio/adapter-codex-local@0.3.1
+  - @cubeclawio/adapter-cursor-local@0.3.1
+  - @cubeclawio/adapter-gemini-local@0.3.1
+  - @cubeclawio/adapter-openclaw-gateway@0.3.1
+  - @cubeclawio/adapter-opencode-local@0.3.1
+  - @cubeclawio/adapter-pi-local@0.3.1
+  - @cubeclawio/db@0.3.1
+  - @cubeclawio/shared@0.3.1
+  - @cubeclawio/server@0.3.1
 
 ## 0.3.0
 
@@ -28,16 +28,16 @@
 
 - Updated dependencies [6077ae6]
 - Updated dependencies
-  - @cubeclawhub/shared@0.3.0
-  - @cubeclawhub/adapter-utils@0.3.0
-  - @cubeclawhub/adapter-claude-local@0.3.0
-  - @cubeclawhub/adapter-codex-local@0.3.0
-  - @cubeclawhub/adapter-cursor-local@0.3.0
-  - @cubeclawhub/adapter-openclaw-gateway@0.3.0
-  - @cubeclawhub/adapter-opencode-local@0.3.0
-  - @cubeclawhub/adapter-pi-local@0.3.0
-  - @cubeclawhub/db@0.3.0
-  - @cubeclawhub/server@0.3.0
+  - @cubeclawio/shared@0.3.0
+  - @cubeclawio/adapter-utils@0.3.0
+  - @cubeclawio/adapter-claude-local@0.3.0
+  - @cubeclawio/adapter-codex-local@0.3.0
+  - @cubeclawio/adapter-cursor-local@0.3.0
+  - @cubeclawio/adapter-openclaw-gateway@0.3.0
+  - @cubeclawio/adapter-opencode-local@0.3.0
+  - @cubeclawio/adapter-pi-local@0.3.0
+  - @cubeclawio/db@0.3.0
+  - @cubeclawio/server@0.3.0
 
 ## 0.2.7
 
@@ -45,13 +45,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.7
-  - @cubeclawhub/adapter-utils@0.2.7
-  - @cubeclawhub/db@0.2.7
-  - @cubeclawhub/adapter-claude-local@0.2.7
-  - @cubeclawhub/adapter-codex-local@0.2.7
-  - @cubeclawhub/adapter-openclaw@0.2.7
-  - @cubeclawhub/server@0.2.7
+  - @cubeclawio/shared@0.2.7
+  - @cubeclawio/adapter-utils@0.2.7
+  - @cubeclawio/db@0.2.7
+  - @cubeclawio/adapter-claude-local@0.2.7
+  - @cubeclawio/adapter-codex-local@0.2.7
+  - @cubeclawio/adapter-openclaw@0.2.7
+  - @cubeclawio/server@0.2.7
 
 ## 0.2.6
 
@@ -59,13 +59,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.6
-  - @cubeclawhub/adapter-utils@0.2.6
-  - @cubeclawhub/db@0.2.6
-  - @cubeclawhub/adapter-claude-local@0.2.6
-  - @cubeclawhub/adapter-codex-local@0.2.6
-  - @cubeclawhub/adapter-openclaw@0.2.6
-  - @cubeclawhub/server@0.2.6
+  - @cubeclawio/shared@0.2.6
+  - @cubeclawio/adapter-utils@0.2.6
+  - @cubeclawio/db@0.2.6
+  - @cubeclawio/adapter-claude-local@0.2.6
+  - @cubeclawio/adapter-codex-local@0.2.6
+  - @cubeclawio/adapter-openclaw@0.2.6
+  - @cubeclawio/server@0.2.6
 
 ## 0.2.5
 
@@ -73,13 +73,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.5
-  - @cubeclawhub/adapter-utils@0.2.5
-  - @cubeclawhub/db@0.2.5
-  - @cubeclawhub/adapter-claude-local@0.2.5
-  - @cubeclawhub/adapter-codex-local@0.2.5
-  - @cubeclawhub/adapter-openclaw@0.2.5
-  - @cubeclawhub/server@0.2.5
+  - @cubeclawio/shared@0.2.5
+  - @cubeclawio/adapter-utils@0.2.5
+  - @cubeclawio/db@0.2.5
+  - @cubeclawio/adapter-claude-local@0.2.5
+  - @cubeclawio/adapter-codex-local@0.2.5
+  - @cubeclawio/adapter-openclaw@0.2.5
+  - @cubeclawio/server@0.2.5
 
 ## 0.2.4
 
@@ -87,13 +87,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.4
-  - @cubeclawhub/adapter-utils@0.2.4
-  - @cubeclawhub/db@0.2.4
-  - @cubeclawhub/adapter-claude-local@0.2.4
-  - @cubeclawhub/adapter-codex-local@0.2.4
-  - @cubeclawhub/adapter-openclaw@0.2.4
-  - @cubeclawhub/server@0.2.4
+  - @cubeclawio/shared@0.2.4
+  - @cubeclawio/adapter-utils@0.2.4
+  - @cubeclawio/db@0.2.4
+  - @cubeclawio/adapter-claude-local@0.2.4
+  - @cubeclawio/adapter-codex-local@0.2.4
+  - @cubeclawio/adapter-openclaw@0.2.4
+  - @cubeclawio/server@0.2.4
 
 ## 0.2.3
 
@@ -101,13 +101,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.3
-  - @cubeclawhub/adapter-utils@0.2.3
-  - @cubeclawhub/db@0.2.3
-  - @cubeclawhub/adapter-claude-local@0.2.3
-  - @cubeclawhub/adapter-codex-local@0.2.3
-  - @cubeclawhub/adapter-openclaw@0.2.3
-  - @cubeclawhub/server@0.2.3
+  - @cubeclawio/shared@0.2.3
+  - @cubeclawio/adapter-utils@0.2.3
+  - @cubeclawio/db@0.2.3
+  - @cubeclawio/adapter-claude-local@0.2.3
+  - @cubeclawio/adapter-codex-local@0.2.3
+  - @cubeclawio/adapter-openclaw@0.2.3
+  - @cubeclawio/server@0.2.3
 
 ## 0.2.2
 
@@ -115,13 +115,13 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.2
-  - @cubeclawhub/adapter-utils@0.2.2
-  - @cubeclawhub/db@0.2.2
-  - @cubeclawhub/adapter-claude-local@0.2.2
-  - @cubeclawhub/adapter-codex-local@0.2.2
-  - @cubeclawhub/adapter-openclaw@0.2.2
-  - @cubeclawhub/server@0.2.2
+  - @cubeclawio/shared@0.2.2
+  - @cubeclawio/adapter-utils@0.2.2
+  - @cubeclawio/db@0.2.2
+  - @cubeclawio/adapter-claude-local@0.2.2
+  - @cubeclawio/adapter-codex-local@0.2.2
+  - @cubeclawio/adapter-openclaw@0.2.2
+  - @cubeclawio/server@0.2.2
 
 ## 0.2.1
 
@@ -129,10 +129,10 @@
 
 - Version bump (patch)
 - Updated dependencies
-  - @cubeclawhub/shared@0.2.1
-  - @cubeclawhub/adapter-utils@0.2.1
-  - @cubeclawhub/db@0.2.1
-  - @cubeclawhub/adapter-claude-local@0.2.1
-  - @cubeclawhub/adapter-codex-local@0.2.1
-  - @cubeclawhub/adapter-openclaw@0.2.1
-  - @cubeclawhub/server@0.2.1
+  - @cubeclawio/shared@0.2.1
+  - @cubeclawio/adapter-utils@0.2.1
+  - @cubeclawio/db@0.2.1
+  - @cubeclawio/adapter-claude-local@0.2.1
+  - @cubeclawio/adapter-codex-local@0.2.1
+  - @cubeclawio/adapter-openclaw@0.2.1
+  - @cubeclawio/server@0.2.1

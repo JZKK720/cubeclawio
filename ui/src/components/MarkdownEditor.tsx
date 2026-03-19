@@ -27,7 +27,7 @@ import {
   thematicBreakPlugin,
   type RealmPlugin,
 } from "@mdxeditor/editor";
-import { buildProjectMentionHref, parseProjectMentionHref } from "@cubeclawhub/shared";
+import { buildProjectMentionHref, parseProjectMentionHref } from "@cubeclawio/shared";
 import { cn } from "../lib/utils";
 
 /* ---- Mention types ---- */

@@ -26,37 +26,37 @@ importers:
       '@clack/prompts':
         specifier: ^0.10.0
         version: 0.10.1
-      '@cubeclawhub/adapter-claude-local':
+      '@cubeclawio/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
-      '@cubeclawhub/adapter-codex-local':
+      '@cubeclawio/adapter-codex-local':
         specifier: workspace:*
         version: link:../packages/adapters/codex-local
-      '@cubeclawhub/adapter-cursor-local':
+      '@cubeclawio/adapter-cursor-local':
         specifier: workspace:*
         version: link:../packages/adapters/cursor-local
-      '@cubeclawhub/adapter-gemini-local':
+      '@cubeclawio/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
-      '@cubeclawhub/adapter-openclaw-gateway':
+      '@cubeclawio/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
-      '@cubeclawhub/adapter-opencode-local':
+      '@cubeclawio/adapter-opencode-local':
         specifier: workspace:*
         version: link:../packages/adapters/opencode-local
-      '@cubeclawhub/adapter-pi-local':
+      '@cubeclawio/adapter-pi-local':
         specifier: workspace:*
         version: link:../packages/adapters/pi-local
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../packages/adapter-utils
-      '@cubeclawhub/db':
+      '@cubeclawio/db':
         specifier: workspace:*
         version: link:../packages/db
-      '@cubeclawhub/server':
+      '@cubeclawio/server':
         specifier: workspace:*
         version: link:../server
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../packages/shared
       commander:
@@ -96,7 +96,7 @@ importers:
 
   packages/adapters/claude-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -112,7 +112,7 @@ importers:
 
   packages/adapters/codex-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -128,7 +128,7 @@ importers:
 
   packages/adapters/cursor-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -144,7 +144,7 @@ importers:
 
   packages/adapters/gemini-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -160,7 +160,7 @@ importers:
 
   packages/adapters/openclaw-gateway:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -182,7 +182,7 @@ importers:
 
   packages/adapters/opencode-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -198,7 +198,7 @@ importers:
 
   packages/adapters/pi-local:
     dependencies:
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../../adapter-utils
       picocolors:
@@ -214,7 +214,7 @@ importers:
 
   packages/db:
     dependencies:
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../shared
       drizzle-orm:
@@ -245,7 +245,7 @@ importers:
 
   packages/plugins/create-paperclip-plugin:
     dependencies:
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../sdk
     devDependencies:
@@ -258,7 +258,7 @@ importers:
 
   packages/plugins/examples/plugin-authoring-smoke-example:
     dependencies:
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
       react:
@@ -307,7 +307,7 @@ importers:
       '@codemirror/view':
         specifier: ^6.28.0
         version: 6.39.15
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
       '@lezer/highlight':
@@ -341,7 +341,7 @@ importers:
 
   packages/plugins/examples/plugin-hello-world-example:
     dependencies:
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
     devDependencies:
@@ -366,10 +366,10 @@ importers:
 
   packages/plugins/examples/plugin-kitchen-sink-example:
     dependencies:
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../../sdk
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../../../shared
     devDependencies:
@@ -397,7 +397,7 @@ importers:
 
   packages/plugins/sdk:
     dependencies:
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../../shared
       react:
@@ -432,37 +432,37 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.888.0
         version: 3.994.0
-      '@cubeclawhub/adapter-claude-local':
+      '@cubeclawio/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
-      '@cubeclawhub/adapter-codex-local':
+      '@cubeclawio/adapter-codex-local':
         specifier: workspace:*
         version: link:../packages/adapters/codex-local
-      '@cubeclawhub/adapter-cursor-local':
+      '@cubeclawio/adapter-cursor-local':
         specifier: workspace:*
         version: link:../packages/adapters/cursor-local
-      '@cubeclawhub/adapter-gemini-local':
+      '@cubeclawio/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
-      '@cubeclawhub/adapter-openclaw-gateway':
+      '@cubeclawio/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
-      '@cubeclawhub/adapter-opencode-local':
+      '@cubeclawio/adapter-opencode-local':
         specifier: workspace:*
         version: link:../packages/adapters/opencode-local
-      '@cubeclawhub/adapter-pi-local':
+      '@cubeclawio/adapter-pi-local':
         specifier: workspace:*
         version: link:../packages/adapters/pi-local
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../packages/adapter-utils
-      '@cubeclawhub/db':
+      '@cubeclawio/db':
         specifier: workspace:*
         version: link:../packages/db
-      '@cubeclawhub/plugin-sdk':
+      '@cubeclawio/plugin-sdk':
         specifier: workspace:*
         version: link:../packages/plugins/sdk
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../packages/shared
       ajv:
@@ -565,31 +565,31 @@ importers:
 
   ui:
     dependencies:
-      '@cubeclawhub/adapter-claude-local':
+      '@cubeclawio/adapter-claude-local':
         specifier: workspace:*
         version: link:../packages/adapters/claude-local
-      '@cubeclawhub/adapter-codex-local':
+      '@cubeclawio/adapter-codex-local':
         specifier: workspace:*
         version: link:../packages/adapters/codex-local
-      '@cubeclawhub/adapter-cursor-local':
+      '@cubeclawio/adapter-cursor-local':
         specifier: workspace:*
         version: link:../packages/adapters/cursor-local
-      '@cubeclawhub/adapter-gemini-local':
+      '@cubeclawio/adapter-gemini-local':
         specifier: workspace:*
         version: link:../packages/adapters/gemini-local
-      '@cubeclawhub/adapter-openclaw-gateway':
+      '@cubeclawio/adapter-openclaw-gateway':
         specifier: workspace:*
         version: link:../packages/adapters/openclaw-gateway
-      '@cubeclawhub/adapter-opencode-local':
+      '@cubeclawio/adapter-opencode-local':
         specifier: workspace:*
         version: link:../packages/adapters/opencode-local
-      '@cubeclawhub/adapter-pi-local':
+      '@cubeclawio/adapter-pi-local':
         specifier: workspace:*
         version: link:../packages/adapters/pi-local
-      '@cubeclawhub/adapter-utils':
+      '@cubeclawio/adapter-utils':
         specifier: workspace:*
         version: link:../packages/adapter-utils
-      '@cubeclawhub/shared':
+      '@cubeclawio/shared':
         specifier: workspace:*
         version: link:../packages/shared
       '@dnd-kit/core':

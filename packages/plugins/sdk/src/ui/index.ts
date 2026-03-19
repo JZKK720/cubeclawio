@@ -1,10 +1,10 @@
 /**
- * `@cubeclawhub/plugin-sdk/ui` — Paperclip plugin UI SDK.
+ * `@cubeclawio/plugin-sdk/ui` — Paperclip plugin UI SDK.
  *
  * Import this subpath from plugin UI bundles (React components that run in
  * the host frontend).  Do **not** import this from plugin worker code.
  *
- * The worker-side SDK is available from `@cubeclawhub/plugin-sdk` (root).
+ * The worker-side SDK is available from `@cubeclawio/plugin-sdk` (root).
  *
  * @see PLUGIN_SPEC.md §19.0.1 — Plugin UI SDK
  * @see PLUGIN_SPEC.md §29.2 — SDK Versioning
@@ -12,8 +12,8 @@
  * @example
  * ```tsx
  * // Plugin UI bundle entry (dist/ui/index.tsx)
- * import { usePluginData, usePluginAction } from "@cubeclawhub/plugin-sdk/ui";
- * import type { PluginWidgetProps } from "@cubeclawhub/plugin-sdk/ui";
+ * import { usePluginData, usePluginAction } from "@cubeclawio/plugin-sdk/ui";
+ * import type { PluginWidgetProps } from "@cubeclawio/plugin-sdk/ui";
  *
  * export function DashboardWidget({ context }: PluginWidgetProps) {
  *   const { data, loading, error } = usePluginData("sync-health", {

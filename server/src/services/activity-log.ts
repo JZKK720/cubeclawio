@@ -1,8 +1,8 @@
 import { randomUUID } from "node:crypto";
-import type { Db } from "@cubeclawhub/db";
-import { activityLog } from "@cubeclawhub/db";
-import { PLUGIN_EVENT_TYPES, type PluginEventType } from "@cubeclawhub/shared";
-import type { PluginEvent } from "@cubeclawhub/plugin-sdk";
+import type { Db } from "@cubeclawio/db";
+import { activityLog } from "@cubeclawio/db";
+import { PLUGIN_EVENT_TYPES, type PluginEventType } from "@cubeclawio/shared";
+import type { PluginEvent } from "@cubeclawio/plugin-sdk";
 import { publishLiveEvent } from "./live-events.js";
 import { redactCurrentUserValue } from "../log-redaction.js";
 import { sanitizeRecord } from "../redaction.js";

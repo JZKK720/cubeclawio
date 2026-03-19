@@ -1,11 +1,11 @@
 import { and, eq, isNull } from "drizzle-orm";
-import type { Db } from "@cubeclawhub/db";
-import { plugins, pluginState } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
+import { plugins, pluginState } from "@cubeclawio/db";
 import type {
   PluginStateScopeKind,
   SetPluginState,
   ListPluginState,
-} from "@cubeclawhub/shared";
+} from "@cubeclawio/shared";
 import { notFound } from "../errors.js";
 
 // ---------------------------------------------------------------------------

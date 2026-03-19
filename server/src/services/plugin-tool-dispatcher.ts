@@ -22,12 +22,12 @@
  * @see PLUGIN_SPEC.md §13.10 — `executeTool`
  */
 
-import type { Db } from "@cubeclawhub/db";
+import type { Db } from "@cubeclawio/db";
 import type {
   PaperclipPluginManifestV1,
   PluginRecord,
-} from "@cubeclawhub/shared";
-import type { ToolRunContext, ToolResult } from "@cubeclawhub/plugin-sdk";
+} from "@cubeclawio/shared";
+import type { ToolRunContext, ToolResult } from "@cubeclawio/plugin-sdk";
 import type { PluginWorkerManager } from "./plugin-worker-manager.js";
 import type { PluginLifecycleManager } from "./plugin-lifecycle.js";
 import {

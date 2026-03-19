@@ -60,8 +60,8 @@ export interface PluginBundlerPresets {
  */
 export function createPluginBundlerPresets(input: PluginBundlerPresetInput = {}): PluginBundlerPresets {
   const uiExternal = [
-    "@cubeclawhub/plugin-sdk/ui",
-    "@cubeclawhub/plugin-sdk/ui/hooks",
+    "@cubeclawio/plugin-sdk/ui",
+    "@cubeclawio/plugin-sdk/ui/hooks",
     "react",
     "react-dom",
     "react/jsx-runtime",
@@ -129,7 +129,7 @@ export function createPluginBundlerPresets(input: PluginBundlerPresetInput = {})
       sourcemap,
       entryFileNames: "manifest.js",
     },
-    external: ["@cubeclawhub/plugin-sdk"],
+    external: ["@cubeclawio/plugin-sdk"],
   };
 
   const rollupUi = uiEntry

@@ -120,14 +120,14 @@ async function maybePreflightMigrations() {
   if (mode !== "watch") return;
 
   const status = await runPnpm(
-    ["--filter", "@cubeclawhub/db", "exec", "tsx", "src/migration-status.ts", "--json"],
+    ["--filter", "@cubeclawio/db", "exec", "tsx", "src/migration-status.ts", "--json"],
     { env },
   );
   if (status.code !== 0) {
     process.stderr.write(
       status.stderr ||
         status.stdout ||
-        `[paperclip] Command failed with code ${status.code}: pnpm --filter @cubeclawhub/db exec tsx src/migration-status.ts --json\n`,
+        `[paperclip] Command failed with code ${status.code}: pnpm --filter @cubeclawio/db exec tsx src/migration-status.ts --json\n`,
     );
     process.exit(status.code);
   }
@@ -201,7 +201,7 @@ await maybePreflightMigrations();
 async function buildPluginSdk() {
   console.log("[paperclip] building plugin sdk...");
   const result = await runPnpm(
-    ["--filter", "@cubeclawhub/plugin-sdk", "build"],
+    ["--filter", "@cubeclawio/plugin-sdk", "build"],
     { stdio: "inherit" },
   );
   if (result.signal) {
@@ -219,7 +219,7 @@ await buildPluginSdk();
 const serverScript = mode === "watch" ? "dev:watch" : "dev";
 const child = spawn(
   pnpmBin,
-  ["--filter", "@cubeclawhub/server", serverScript, ...forwardedArgs],
+  ["--filter", "@cubeclawio/server", serverScript, ...forwardedArgs],
   { stdio: "inherit", env, shell: process.platform === "win32" },
 );
 

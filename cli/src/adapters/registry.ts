@@ -1,11 +1,11 @@
-import type { CLIAdapterModule } from "@cubeclawhub/adapter-utils";
-import { printClaudeStreamEvent } from "@cubeclawhub/adapter-claude-local/cli";
-import { printCodexStreamEvent } from "@cubeclawhub/adapter-codex-local/cli";
-import { printCursorStreamEvent } from "@cubeclawhub/adapter-cursor-local/cli";
-import { printGeminiStreamEvent } from "@cubeclawhub/adapter-gemini-local/cli";
-import { printOpenCodeStreamEvent } from "@cubeclawhub/adapter-opencode-local/cli";
-import { printPiStreamEvent } from "@cubeclawhub/adapter-pi-local/cli";
-import { printOpenClawGatewayStreamEvent } from "@cubeclawhub/adapter-openclaw-gateway/cli";
+import type { CLIAdapterModule } from "@cubeclawio/adapter-utils";
+import { printClaudeStreamEvent } from "@cubeclawio/adapter-claude-local/cli";
+import { printCodexStreamEvent } from "@cubeclawio/adapter-codex-local/cli";
+import { printCursorStreamEvent } from "@cubeclawio/adapter-cursor-local/cli";
+import { printGeminiStreamEvent } from "@cubeclawio/adapter-gemini-local/cli";
+import { printOpenCodeStreamEvent } from "@cubeclawio/adapter-opencode-local/cli";
+import { printPiStreamEvent } from "@cubeclawio/adapter-pi-local/cli";
+import { printOpenClawGatewayStreamEvent } from "@cubeclawio/adapter-openclaw-gateway/cli";
 import { processCLIAdapter } from "./process/index.js";
 import { httpCLIAdapter } from "./http/index.js";
 
