@@ -4,6 +4,7 @@
   "description": "Paperclip CLI — orchestrate AI agent teams to run a business",
   "type": "module",
   "bin": {
+    "cubecloud.io": "./dist/index.js",
     "paperclipai": "./dist/index.js"
   },
   "keywords": [

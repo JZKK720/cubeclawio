@@ -25,7 +25,7 @@ const DATA_DIR_OPTION_HELP =
   "Paperclip data directory root (isolates state from ~/.paperclip)";
 
 program
-  .name("paperclipai")
+  .name("cubecloud.io")
   .description("Paperclip CLI — setup, diagnose, and configure your instance")
   .version("0.2.7");
 
