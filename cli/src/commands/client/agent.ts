@@ -1,9 +1,9 @@
 import { Command } from "commander";
-import type { Agent } from "@paperclipai/shared";
+import type { Agent } from "@cubeclawhub/shared";
 import {
   removeMaintainerOnlySkillSymlinks,
   resolvePaperclipSkillsDir,
-} from "@paperclipai/adapter-utils/server-utils";
+} from "@cubeclawhub/adapter-utils/server-utils";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

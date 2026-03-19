@@ -7,7 +7,7 @@ import type {
   NormalizedExecutionArtifact,
   NormalizedExecutionRun,
   NormalizedExecutionRunEvent,
-} from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
 import { api } from "./client";
 
 type ConnectorConfigInput = {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { agents } from "@paperclipai/db";
+import type { agents } from "@cubeclawhub/db";
 import { resolveDefaultAgentWorkspaceDir } from "../home-paths.js";
 import {
   prioritizeProjectWorkspaceCandidatesForRun,

@@ -1,4 +1,4 @@
-# @paperclipai/shared
+# @cubeclawhub/shared
 
 ## 0.3.1
 

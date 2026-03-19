@@ -2,8 +2,8 @@ import type {
   AdapterEnvironmentCheck,
   AdapterEnvironmentTestContext,
   AdapterEnvironmentTestResult,
-} from "@paperclipai/adapter-utils";
-import { asString, parseObject } from "@paperclipai/adapter-utils/server-utils";
+} from "@cubeclawhub/adapter-utils";
+import { asString, parseObject } from "@cubeclawhub/adapter-utils/server-utils";
 import { randomUUID } from "node:crypto";
 import { WebSocket } from "ws";
 

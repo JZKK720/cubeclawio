@@ -8,7 +8,7 @@ import type {
   CompanyPortabilityManifest,
   CompanyPortabilityPreviewResult,
   CompanyPortabilityImportResult,
-} from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
 import { ApiRequestError } from "../../client/http.js";
 import {
   addCommonClientOptions,

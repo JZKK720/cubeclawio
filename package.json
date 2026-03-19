@@ -1,19 +1,19 @@
 {
-  "name": "paperclip",
+  "name": "cubeclawhub",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "node scripts/dev-runner.mjs watch",
     "dev:watch": "node scripts/dev-runner.mjs watch",
     "dev:once": "node scripts/dev-runner.mjs dev",
-    "dev:server": "pnpm --filter @paperclipai/server dev",
-    "dev:ui": "pnpm --filter @paperclipai/ui dev",
+    "dev:server": "pnpm --filter @cubeclawhub/server dev",
+    "dev:ui": "pnpm --filter @cubeclawhub/ui dev",
     "build": "corepack pnpm -r build",
     "typecheck": "corepack pnpm -r typecheck",
     "test": "vitest",
     "test:run": "vitest run",
-    "db:generate": "pnpm --filter @paperclipai/db generate",
-    "db:migrate": "pnpm --filter @paperclipai/db migrate",
+    "db:generate": "pnpm --filter @cubeclawhub/db generate",
+    "db:migrate": "pnpm --filter @cubeclawhub/db migrate",
     "secrets:migrate-inline-env": "tsx scripts/migrate-inline-env-secrets.ts",
     "db:backup": "./scripts/backup-db.sh",
     "paperclipai": "node cli/node_modules/tsx/dist/cli.mjs cli/src/index.ts",
@@ -33,7 +33,6 @@
   },
   "devDependencies": {
     "cross-env": "^10.1.0",
-    "name": "cubeclawhub",
     "esbuild": "^0.27.3",
     "typescript": "^5.7.3",
     "vitest": "^3.0.5"

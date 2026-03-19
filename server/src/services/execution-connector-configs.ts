@@ -1,14 +1,14 @@
 import { and, eq } from "drizzle-orm";
-import type { Db } from "@paperclipai/db";
-import { executionConnectorConfigs } from "@paperclipai/db";
+import type { Db } from "@cubeclawhub/db";
+import { executionConnectorConfigs } from "@cubeclawhub/db";
 import type {
   CompanyExecutionConnector,
   CompanyExecutionConnectorConfig,
   ExecutionConnectorHealth,
   IronclawGatewayConnectorConfig,
   IronclawGatewayPersistentConfig,
-} from "@paperclipai/shared";
-import { ironclawGatewayPersistentConfigSchema } from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
+import { ironclawGatewayPersistentConfigSchema } from "@cubeclawhub/shared";
 import { getExecutionConnector, listExecutionConnectorDefinitions, testExecutionConnector } from "../connectors/index.js";
 import { badRequest, notFound } from "../errors.js";
 import { secretService } from "./secrets.js";

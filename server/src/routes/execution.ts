@@ -1,10 +1,10 @@
 import { Router, type Request } from "express";
-import type { Db } from "@paperclipai/db";
+import type { Db } from "@cubeclawhub/db";
 import {
   executionConnectorConfigSchema,
   listExecutionRunEventsQuerySchema,
   testExecutionConnectorSchema,
-} from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
 import { badRequest, forbidden } from "../errors.js";
 import { assertBoard, assertCompanyAccess, getActorInfo } from "./authz.js";
 import {

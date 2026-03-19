@@ -1,8 +1,8 @@
 import { EventEmitter } from "node:events";
 import { and, asc, eq, gt, max } from "drizzle-orm";
-import type { Db } from "@paperclipai/db";
-import { executionRunEvents } from "@paperclipai/db";
-import type { NormalizedExecutionRunEvent } from "@paperclipai/shared";
+import type { Db } from "@cubeclawhub/db";
+import { executionRunEvents } from "@cubeclawhub/db";
+import type { NormalizedExecutionRunEvent } from "@cubeclawhub/shared";
 import { getExecutionConnector } from "../connectors/index.js";
 import { badRequest, notFound } from "../errors.js";
 import { executionConnectorConfigService } from "./execution-connector-configs.js";

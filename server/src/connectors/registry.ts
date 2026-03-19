@@ -3,7 +3,7 @@ import type {
   ExecutionConnectorHealth,
   ExecutionConnectorModule,
   ExecutionConnectorOperationKind,
-} from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
 import { ironclawGatewayConnector } from "./ironclaw-gateway.js";
 
 export interface ExecutionConnectorRegistry {

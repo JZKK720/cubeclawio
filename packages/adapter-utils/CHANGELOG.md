@@ -1,4 +1,4 @@
-# @paperclipai/adapter-utils
+# @cubeclawhub/adapter-utils
 
 ## 0.3.1
 

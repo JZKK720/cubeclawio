@@ -8,14 +8,14 @@ import type {
   ExternalExecutionRef,
   NormalizedExecutionArtifact,
   NormalizedExecutionRun,
-} from "@paperclipai/shared";
+} from "@cubeclawhub/shared";
 import {
   getExecutionConnector,
   listExecutionConnectorDefinitions,
   listExecutionConnectorsByOperation,
 } from "../connectors/index.js";
 import { badRequest, notFound } from "../errors.js";
-import type { Db } from "@paperclipai/db";
+import type { Db } from "@cubeclawhub/db";
 import { executionConnectorConfigService } from "./execution-connector-configs.js";
 import { executionEventService } from "./execution-events.js";
 
@@ -29,7 +29,7 @@ export interface NormalizedExecutionService {
   restartRun(input: { companyId: string; connectorKey: string; runId: string }): Promise<NormalizedExecutionRun>;
   promptRun(input: { companyId: string; connectorKey: string; runId: string; prompt: string }): Promise<{ ok: boolean; message?: string }>;
   listRunArtifacts(input: { companyId: string; connectorKey: string; runId: string }): Promise<NormalizedExecutionArtifact[]>;
-  listRunEvents(input: { companyId: string; connectorKey: string; runId: string; afterSeq?: number; limit?: number }): Promise<import("@paperclipai/shared").NormalizedExecutionRunEvent[]>;
+  listRunEvents(input: { companyId: string; connectorKey: string; runId: string; afterSeq?: number; limit?: number }): Promise<import("@cubeclawhub/shared").NormalizedExecutionRunEvent[]>;
   listRoutines(input: { companyId: string; connectorKey?: string }): Promise<ExecutionRoutineSummary[]>;
   getRoutine(input: { companyId: string; connectorKey: string; routineId: string }): Promise<ExecutionRoutineSummary | null>;
   listRoutineRuns(input: { companyId: string; connectorKey: string; routineId: string }): Promise<ExecutionRoutineRunSummary[]>;
